@@ -15,3 +15,11 @@
 .card img {
     object-fit: cover;
 }
+.card .btn {
+    margin-left: 10px;
+    border: 2px solid #333;
+    font-weight: bold;
+}
+.create {
+    margin-top: 200px;
+}
