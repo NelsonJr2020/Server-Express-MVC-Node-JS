@@ -23,24 +23,22 @@ class AuthMiddleware {
 
     //COMPROBACIÓN DE VALIDEZ DE JSON WEB TOKEN DE USUARIO
     authenticateJWT = (req, res, next) => {
-      const token = req.cookies.jwt;
-      console.log("Este es el token: ", token);
-      if (token) {
-        try {
-          const decoded = this._verifyToken(token);
-  
-          if(decoded) {
-            req.user = decoded;
-            next();
-          } else {
-            res.status(401).json({ message: "Acceso no autorizado" });
-          }
-        } catch (error) {
-          res.status(401).json({ message: "Token inválido o expirado" });
+        const token = req.cookies.jwt;
+        if (token) {
+            try {
+              const decoded = this._verifyToken(token);
+              if(decoded) {
+                req.user = decoded;
+                next();
+              } else {
+                res.status(401).json({ message: "Acceso no autorizado" }).redirect('/');
+              }
+            } catch (error) {
+              res.status(401).json({ message: "Token inválido o expirado" }).redirect('/');
+            }
+        } else {
+          res.status(401).json({ message: "Acceso no autorizado" }).redirect('/');
         }
-      } else {
-        res.status(401).json({ message: "Acceso no autorizado" });
-      }
     }
 
     //COMPROBACIÓN DE VALIDEZ DE APIKEY DE USUARIO
