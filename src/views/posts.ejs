@@ -1,0 +1,52 @@
+<!-- views/posts.ejs -->
+
+<!DOCTYPE html>
+<html>
+    <!-- CÓDIGO DE HEAD -->
+    <%- include('partials/head') %>
+    <body>
+        <!-- CÓDIGO DE NAVBAR -->
+        <%- include('partials/navbar') %>
+        <!-- CONTENEDOR -->
+        <div class="container">
+            <!-- MENSAJE -->
+            <div class="text-center" id="message"><%= message %></div>
+            <!-- TABLA -->
+            <table class="table table-warning table-striped">    
+                <thead>
+                    <td>#</td>
+                    <td>Titulo</td>
+                    <td>Contenido</td>
+                    <td>Foto</td>
+                    <td>Fecha</td>
+                    <td>Link</td>
+                </thead>
+                <tbody>
+                    <% posts.forEach((post, index) => { %>
+                        <tr>
+                            <td><%= post.guid %></td>
+                            <td><%= post.title %></td>
+                            <td>
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#row<%= index %>">
+                                    Ver Contenido
+                                </button>
+                                <div id="row<%= index %>" class="collapse">
+                                    <%= post.content %>
+                                </div>
+                            </td>
+                            <td><div class="image-td"><img src="<%= post.img %>" /></div></td>
+                            <td><%= post.datePost %></td>
+                            <td><a href="post/<%= post.guid %>">Ir</a></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <!-- CÓDIGO DE FOOTER -->
+        <%- include('partials/footer') %>
+        <!-- SCRIPTS -->
+        <script src="/assets/bootstrap/popper.min.js"></script>
+        <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/tools.js"></script>
+    </body>
+</html>

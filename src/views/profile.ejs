@@ -1,0 +1,20 @@
+<!-- views/profile.ejs -->
+
+<!DOCTYPE html>
+<html>
+    <!-- CÓDIGO DE HEAD -->
+    <%- include('partials/head') %>
+    <body>
+        <!-- CÓDIGO DE NAVBAR -->
+        <%- include('partials/navbar') %>
+        <!-- CONTENEDOR -->
+        <div class="container-fluid">
+            <h1>Hola, <%= profile.user.firstName %></h1>
+            <div id="message"><%= message %></div>
+        </div>
+        <!-- SCRIPTS -->
+        <script src="/assets/bootstrap/popper.min.js"></script>
+        <script src="/assets/bootstrap/bootstrap.min.js"></script>
+        <script src="/assets/js/tools.js"></script>
+    </body>
+</html>

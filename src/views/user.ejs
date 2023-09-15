@@ -1,0 +1,39 @@
+<!-- views/user.ejs -->
+
+<!DOCTYPE html>
+<html>
+    <!-- CÓDIGO DE HEAD -->
+    <%- include('partials/head') %>
+    <body>
+        <!-- CÓDIGO DE NAVBAR -->
+        <%- include('partials/navbar') %>
+        <!-- CONTENEDOR -->
+        <div class="container">
+            <!-- MENSAJE -->
+            <div id="message"><%= message %></div>
+            <!-- TABLA  -->
+            <table class="table table-warning table-striped">    
+                <thead>
+                    <td>#</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Email</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <%= user.id %>         </td>
+                        <td> <%= user.firstName %>  </td>
+                        <td> <%= user.lastName %>   </td>
+                        <td> <%= user.email %>      </td>
+                    </tr>
+                </tbody>
+            </table>           
+        </div>
+        <!-- CÓDIGO DE FOOTER -->
+        <%- include('partials/footer') %>
+        <!-- SCRIPTS -->
+        <script src="/assets/bootstrap/popper.min.js"></script>
+        <script src="/assets/bootstrap/bootstrap.min.js"></script>
+        <script src="/assets/js/tools.js"></script>
+    </body>
+</html>
