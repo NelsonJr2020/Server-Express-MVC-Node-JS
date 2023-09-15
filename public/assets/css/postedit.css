@@ -1,0 +1,30 @@
+.card {
+    margin-top: 150px;
+    border: 20px solid oldlace;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px #333;
+    background-color: white;
+    border-radius: 10px;
+}
+.image-form {
+    height: 230px;
+    overflow: hidden;
+    padding: 0px;
+}
+form img {
+    object-fit: cover;
+}
+textarea {
+    height: 555px !important;
+    background-color: ivory;
+}
+textarea:focus {
+    height: 555px !important;
+    background-color: rgb(196, 255, 168);
+    box-shadow: 1px 1px 2px black inset;
+    outline: 0;
+}
+button {
+    margin-top: 25px;
+    border: 2px solid #333;
+}
