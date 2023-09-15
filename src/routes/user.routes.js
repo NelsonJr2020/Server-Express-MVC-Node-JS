@@ -14,8 +14,8 @@ userRoutes.get('/logout', [auth.authenticateSession, auth.authenticateJWT], cont
 userRoutes.get("/login", controllerUsers.loginForm); //LOGIN FORM
 userRoutes.post('/login', controllerUsers.loginProcess); //LOGIN PROCESS
 userRoutes.get('/profile', [auth.authenticateSession, auth.authenticateJWT], controllerUsers.profileUser); //PROFILE USER
-userRoutes.put('/user/:id', [auth.authenticateSession, auth.authenticateJWT], controllerUsers.updateUser); //UPDATE USER
-userRoutes.delete('/user/:id', [auth.authenticateSession, auth.authenticateJWT], controllerUsers.deleteUser); //DELETE USER
+userRoutes.post('/user/update/:id', [auth.authenticateSession, auth.authenticateJWT], controllerUsers.updateUser); //UPDATE USER
+userRoutes.post('/user/delete/:id', [auth.authenticateSession, auth.authenticateJWT], controllerUsers.deleteUser); //DELETE USER
 
 //EXPORTA RUTAS DE USUARIOS
 module.exports = userRoutes;
