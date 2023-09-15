@@ -172,15 +172,16 @@ class controllerUsers {
     //CONTROLLER CIERRA SESIÓN
     async closeSession(req, res) {
         try {
-            const success = await userService.closeSession(req);
+            const success = await userService.closeSession(req, res);
     
             if(success) {
-                return res.status(200).render('/', { message: '¡Gracias por usar la aplicación!' });
+                res.redirect('/');
+                // return res.status(200).render('/', { message: '¡Gracias por usar la aplicación!' });
             } else {
-                return res.status(500).render('/', { message: 'Hubo un error al cerrar la sesión.' });
+                return res.status(500).send({ message: 'Hubo un error al cerrar la sesión.' });
             }
         } catch(error) {
-            return res.status(500).render('/', { message: 'Hubo un error al cerrar la sesión.' });
+            return res.status(500).send({ message: 'Hubo un error al cerrar la sesión.' });
         }
     }
 }
