@@ -93,7 +93,7 @@ class UserService {
     async createUser(userBody) {
         const { firstName, lastName, email, password, birthDate } = userBody;
         if(!firstName || !lastName || !email || !password || !birthDate) {
-            throw new Error("complete todos los campos obligatorios");
+            throw new Error("complete todos los campos *obligatorios");
         }
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
@@ -136,22 +136,15 @@ class UserService {
     }
 
     //SERVICE CIERRA SESIÓN DE USUARIO
-    async closeSession(req) {
+    async closeSession(req, res) {
         try {
             delete req.session.userId;
-            const payload = req.user;
-            payload.exp = 0;
-            const invalidToken = jwt.generateToken(payload, '0s');
-            res.cookie('jwt', invalidToken, {
-                httpOnly: true,
-                maxAge: 0,
-              });
-        return true;
+            res.clearCookie('jwt');
+            return true;
         } catch (error) {
             throw new Error("al cerrar la sesión");
         }
     }
-  
 }
 
 //EXPORTA LA INSTANCIA DE LA CLASE SERVICIO DE USUARIO
