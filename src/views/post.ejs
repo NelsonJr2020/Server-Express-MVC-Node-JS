@@ -23,9 +23,14 @@
                     <h5 class="card-title"><b>Título:&nbsp;&nbsp;</b><%= post.title %></h5>
                     <p class="card-text"><%= post.content %></p>
                     <p class="card-text"><small class="text-muted">Publicado el <%= post.datePost %></small></p>
-                    <p class="card-text">GUID: <%= post.guid %></p>
+                    <p class="card-text">GUID: #<%= post.guid %></p>
+                    <hr>
                     <div class="d-flex justify-content-end">
-                        <a href="/post/edit/<%= post.guid %>" class="btn btn-danger right">Editar</a>
+                        <a href="/post/edit/<%= post.guid %>" class="btn btn-success right">Editar</a>
+                        <form action="/post/delete/<%= post.guid %>" method="POST">
+                            <button href="/post/delete/<%= post.guid %>" class="btn btn-danger right">Eliminar</button>
+                        </form>
+                        
                     </div>
                 </div>
             </div>

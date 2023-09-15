@@ -1,0 +1,49 @@
+<!-- views/postcreate.ejs -->
+
+<!DOCTYPE html>
+<html>
+    <!-- CÓDIGO DE HEAD -->
+    <%- include('partials/head') %>
+    <body>
+        <!-- CÓDIGO DE NAVBAR -->
+        <%- include('partials/navbar') %>
+        <!-- CONTENEDOR -->
+        <div class="container">
+            <!-- MENSAJE -->
+            <div class="text-center" id="message"><%= message %></div>
+            <!-- FORMULARIO -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Autor: <%= firstName %> <%= lastName %>
+                </div>
+                <div class="card-body">
+                    <form action="/post/create" method="POST">
+                        <input type="hidden" name="userId" value="<%= userId %>" />
+                        <div class="form-group">
+                            <label for="title" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="content" class="form-label">Contenido</label>
+                            <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="img" class="form-label">URL de la Imagen</label>
+                            <input type="text" class="form-control" id="img" name="img" required>
+                        </div>
+                        <div class="d-flex justify-content-end btns">
+                            <button type="submit" class="btn btn-success create-post">Crear Post</button>
+                            <a href="/posts" class="btn btn-secondary right">Abandonar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- CÓDIGO DE FOOTER -->
+        <%- include('partials/footer') %>
+        <!-- SCRIPTS -->
+        <script src="/assets/bootstrap/popper.min.js"></script>
+        <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/tools.js"></script>
+    </body>
+</html>

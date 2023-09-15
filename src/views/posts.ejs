@@ -11,8 +11,11 @@
         <div class="container">
             <!-- MENSAJE -->
             <div class="text-center" id="message"><%= message %></div>
+            <div class="d-flex justify-content-end create-post">
+                <a href="/post/create/<%= userId %>" class="circle-button"><span class="plus-sign">+</span></a>
+            </div>
             <!-- TABLA -->
-            <table class="table table-warning table-striped">    
+            <table class="table table-sm table-warning table-striped table-hover">    
                 <thead>
                     <td>#</td>
                     <td>Titulo</td>
@@ -24,7 +27,7 @@
                 <tbody>
                     <% posts.forEach((post, index) => { %>
                         <tr>
-                            <td><%= post.guid %></td>
+                            <td>#<%= post.guid %></td>
                             <td><%= post.title %></td>
                             <td>
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#row<%= index %>">
@@ -36,7 +39,7 @@
                             </td>
                             <td><div class="image-td"><img src="<%= post.img %>" /></div></td>
                             <td><%= post.datePost %></td>
-                            <td><a href="post/<%= post.guid %>">Ir</a></td>
+                            <td><a href="post/<%= post.guid %>"><button class="btn btn-success leer">Ver</button></a></td>
                         </tr>
                     <% }); %>
                 </tbody>
