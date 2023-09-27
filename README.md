@@ -59,8 +59,12 @@ $ npm run dev
 y con esto da inicio a la app por primera vez. 
 
 Si todo salió bien y no tiene errores y ahora con la base de datos ya creada y con los usuarios cargados desde el arhivo de configuración json, podrá utilizar los siguientes usuarios para el test.
+Para poder utilizar la app debe ingresar a cualquier navegador y escribir:
+```
+http://localhost:3000
+```
 
-/* USUARIOS CON PRIVILEGIOS PARA EL USO DE LA APP */
+Una vez en la página principal, para el test puede utilizar los siguientes usuarios con privilegio de administrador, moderador y usuario común
 
     ► email = "administrador@example.com"
     ► password = "12345678"
@@ -68,3 +72,5 @@ Si todo salió bien y no tiene errores y ahora con la base de datos ya creada y 
     ► email = "moderador@example.com"
     ► password = "12345678"
     
+    ► email = "melissa.fleming@example.com"
+    ► password = "12345678"
