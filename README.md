@@ -125,7 +125,7 @@ ALTER TABLE `users`
 COMMIT;
 ```
 - Para crear el usuario si o si debe almacenar un email test@example.com, una contraseña encriptada, un nombre y apellido, un rol numérico (1 → administrador, 2 → moderador, 3 → usuario) y el estado isActive = 1.
-- Para generar la contraseña puede correr este código utilizando bcryptjs generando una contraseña provisoria
+- Para generar la contraseña puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) para generar una contraseña provisoria de acceso al sistema.
   ```javascript
   const bcrypt = require('bcrypt');
 
