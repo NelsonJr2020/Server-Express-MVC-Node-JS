@@ -14,23 +14,24 @@ Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son 
 ## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 
 ### NODE JS | DEPENDENCIAS
-Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión del archivo «package.json»: 
-    ✔ [express](https://expressjs.com/es/starter/installing.html)
-    ✔ [sequelize](https://sequelize.org)
-    ✔ [helmet](https://helmetjs.github.io)
-    ✔ [express-session](https://github.com/expressjs/session)
-    ✔ [ejs](https://ejs.co)
-    ✔ [body-parser](https://www.npmjs.com/package/body-parser)
-    ✔ [cookie-parser](https://www.npmjs.com/package/cookie-parser)
-    ✔ [dotenv](https://www.npmjs.com/package/dotenv)
-    ✔ [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
-    ✔ [bcryptjs](https://www.npmjs.com/package/bcryptjs)
-    ✔ [uuid](https://www.npmjs.com/package/uuid)
+Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión indicada en el archivo [package.json](package.json)
+
+    ✔ [express](https://expressjs.com/es/starter/installing.html)\
+    ✔ [sequelize](https://sequelize.org)\
+    ✔ [helmet](https://helmetjs.github.io)\
+    ✔ [express-session](https://github.com/expressjs/session)\
+    ✔ [ejs](https://ejs.co)\
+    ✔ [body-parser](https://www.npmjs.com/package/body-parser)\
+    ✔ [cookie-parser](https://www.npmjs.com/package/cookie-parser)\
+    ✔ [dotenv](https://www.npmjs.com/package/dotenv)\
+    ✔ [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)\
+    ✔ [bcryptjs](https://www.npmjs.com/package/bcryptjs)\
+    ✔ [uuid](https://www.npmjs.com/package/uuid)\
 
 Para el entorno de desarrollo se utiliza el [nodemon](https://www.npmjs.com/package/nodemon) y [morgan](https://github.com/expressjs/morgan)
     
 Una vez instaladas las dependencias debe ingresar a la consola de comandos y desde allí dirigirse al directorio donde se encuentra descomprimido el proyecto.
-
+***
 ### BASE DE DATOS
 Configuración de la Base de Datos
 ✔ [mysql2](https://www.npmjs.com/package/mysql2)
@@ -60,7 +61,7 @@ JWT_SECRET = mi_secreto_secreto_super_secreto
 - Asegurese que posea un usuario con privilegios (de preferencia root) de administrador para la DB y utilice sus credenciales en el archivo **.env**.
 
 *[ Configuración manual inicial de la db ]*
-- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura con el código SQL y luego debe crear al menos un usuario desde consola mysql o cualquier editor de mysql.
+- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura de la db con el código SQL proporcionado y luego debe crear al menos un usuario desde consola mysql o cualquier editor de mysql preferido.
 ```SQL
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
@@ -124,8 +125,13 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 ```
-- Para crear el usuario si o si debe almacenar un email test@example.com, una contraseña encriptada, un nombre y apellido, un rol numérico (1 → administrador, 2 → moderador, 3 → usuario) y el estado isActive = 1.
-- Para generar la contraseña puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) para generar una contraseña provisoria de acceso al sistema.
+- Para crear el usuario si o si debe generar
+   - Email: test@example.com
+   - Contraseña encriptada (generada por bcryptjs)
+   - Nombre (firstName) y Apellido (lastName)
+   - Rol (numérico) (1 → administrador | 2 → moderador | 3 → usuario) 
+   - Estado isActive = 1
+- Para generar una contraseña encriptada y provisoria manualmente puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) de esa manera podrá acceder al sistema.
   ```javascript
   const bcrypt = require('bcrypt');
 
@@ -141,27 +147,30 @@ COMMIT;
     }
   });
   ```
-- Entonces desde la consola de mysql o desde una aplicación correr el siguiente código sin olvidar que si o si deber reemplazar el campo password por la contraseña encriptada obtenida en el paso anterior
+- Una vez con todos los datos listos puede utilizar el siguiente código SQL sin olvidar reemplazar el campo password por la contraseña encriptada obtenida en el paso anterior.
 ```SQL
 INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `password`, `phone`, `role`, `birthDate`, `gender`, `isActive`, `createdAt`, `updatedAt`) VALUES
 (1, 'Nombre', 'Apellido', 'apododeusuario', 'admin@example.com', 'contraseñaencriptada', 997, 1, '1977-05-03 00:00:00', 'Desconocido', 1, '2023-09-27 01:44:16', '2023-09-27 01:44:16');
 ```
-- Por último no debe olvidarse que para hacer login deberá utilizar la contraseña en "texto plano", ya que la encriptada solo funciona del lado servidor.
-
+- Por último no debe olvidarse que para hacer el login al sistema deberá utilizar la contraseña en "texto plano", ya que la encriptada solo funciona del lado servidor.
+***
 ### PUESTA EN MARCHA
 Una vez realizados los pasos previos,
- 1- Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido 
- 2- Debe ejecutar en la consola el siguiente comando: 
+  1 - Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido 
+  2 - Debe ejecutar en la consola el siguiente comando: 
 ```bash
 $ npm run dev
 ```
-... con esto da inicio a la app por primera vez
+*... con esto daría inicio a la app por primera vez ...*
+
 **☺**
 Si todo salió bien y no tiene errores en pantalla y ha utilizado la opción automatizada para el test podrá utilizar los siguientes usuarios.
 Para poder utilizar la app debe ingresar a cualquier navegador y escribir:
 ```
 http://localhost:3000
 ```
+Entonces debería ver esto en pantalla 
+             **↓↓↓**
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/a3364418-7ee3-462f-b982-0f2458145385)
 
 Una vez en la página principal, para el test puede utilizar los siguientes usuarios con privilegios de administrador, moderador y usuario común
@@ -177,7 +186,7 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
     
     ► email = "melissa.fleming@example.com"
     ► password = "12345678"
-    
+***
 ### ESTRUCTURA DEL PROYECTO
 Directorios y archivos importantes:
 
