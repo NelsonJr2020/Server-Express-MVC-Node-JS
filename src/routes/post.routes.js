@@ -1,26 +1,27 @@
 /* routes/post.routes.js */
 
 //REQUIRES
-const postRoutes = require("express").Router();
-const controllerPosts = require("../controllers/post.controller");
+const postRoutes = require('express').Router();
+const controllerPosts = require('../controllers/post.controller');
 const auth = require('../middlewares/auth.middleware');
-const img = require('../middlewares/img.middleware');
 
-//RUTAS DEL CRUD DE POSTS
-postRoutes.get("/posts", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.viewAllPosts); //VIEW ALL POSTS
-postRoutes.get("/post/:guid", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.viewPost); //VIEW POST BY GUID
+//RUTAS DE POSTS CON AUTENTICACIÓN
+//VIEW ALL POSTS BY PAGE NUMBER
+postRoutes.get('/posts/page/:pageNumber', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.viewAllPosts);
+//VIEW POST BY GUID
+postRoutes.get('/post/:guid', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.viewPost);
 
-//CREATE FORM POST
-postRoutes.get("/post/create/:guid", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.postForm); 
+//NEW FORM POST
+postRoutes.get('/newpost', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.postForm);
 //CREATE PROCESS POST
-postRoutes.post("/post/create", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.postProcess); 
+postRoutes.post('/post/create', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.createPost);
 
-//UPDATE FORM POST 
-postRoutes.get("/post/edit/:guid", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.editPost);
+//EDIT FORM POST
+postRoutes.get('/post/edit/:guid', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.editPost);
 //UPDATE PROCESS POST
-postRoutes.post("/post/edit/:guid", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.updatePost);
+postRoutes.post('/post/update/:guid', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.updatePost);
 //DELETE POST
-postRoutes.post("/post/delete/:guid", [auth.authenticateSession, auth.authenticateJWT], controllerPosts.deletePost); 
+postRoutes.post('/post/delete/:guid', [auth.authenticateSession, auth.authenticateJWT], controllerPosts.deletePost); 
 
 //EXPORTA RUTAS DE USUARIOS
 module.exports = postRoutes;
