@@ -4,15 +4,15 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const db = require('./src/database/database');
+const db = require('./src/database/db');
 const helmet = require('helmet');
 const session = require('express-session');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mainRoutes = require('./src/routes/main.routes')
 const userRoutes = require('./src/routes/user.routes');
 const postRoutes = require('./src/routes/post.routes');
+const InitConfig = require('./src/configs/init.config');
 
 //INICIALIZACIÓN SERVER
 const app = express();
@@ -22,7 +22,13 @@ const SECRET = process.env.SECRET;
 //INICIALIZACIÓN DB
 db.initConnection();
 
-//CONFIGURACIÓN DE MIDDLEWARE
+//AUTOMATIZACIÓN DE CONFIGURACIÓN INICIAL DE BASE DE DATOS Y CARGA DE DATOS DE PRUEBA
+const configPath = './src/configs/config.json';
+const dataTestPath = './src/configs/datatest/datatest.json';
+const initConfig = new InitConfig(configPath, dataTestPath);
+initConfig.updateHasDbCreate();
+
+//CONFIGURACIÓN DE MIDDLEWARES
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('tiny'));
@@ -38,7 +44,7 @@ app.use(
 app.use(cookieParser());
 app.use((req, res, next) => {
     
-    const images = "https://img.freepik.com/ https://pngimg.com/ https://static.vecteezy.com/ https://global-uploads.webflow.com/";
+    const images = "https://img.freepik.com/ https://pngimg.com/ https://static.vecteezy.com/ https://global-uploads.webflow.com/ https://images.unsplash.com/";
     const fontsApi = "https://fonts.googleapis.com";
     const fontsStatic = "https://fonts.gstatic.com";
     const authorize = `default-src 'self' ${fontsApi};font-src 'self' ${fontsStatic};img-src 'self' ${images} data:;`;
