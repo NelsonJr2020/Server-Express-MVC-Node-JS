@@ -147,7 +147,7 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `passwo
 (1, 'Nombre', 'Apellido', 'apododeusuario', 'admin@example.com', 'contraseñaencriptada', 997, 1, '1977-05-03 00:00:00', 'Desconocido', 1, '2023-09-27 01:44:16', '2023-09-27 01:44:16');
 ```
 - Por último no debe olvidarse que para hacer login deberá utilizar la contraseña en "texto plano", ya que la encriptada solo funciona del lado servidor.
-- 
+
 ### PUESTA EN MARCHA
 Una vez realizados los pasos previos,
  1- Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido 
