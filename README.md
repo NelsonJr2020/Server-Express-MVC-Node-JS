@@ -12,7 +12,7 @@ El proyecto está firmemente arraigado sobre Sequelize y sobre los servicios des
 
 ## Instalación
 
-Para el proyecto se necesitan de las siguientes dependencias de node-js y el node-js instalado: 
+Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión que figura en el archivo «package.json»: 
     ✔ [express](https://expressjs.com/es/starter/installing.html)
     ✔ [sequelize](https://sequelize.org)
     ✔ [helmet](https://helmetjs.github.io)
