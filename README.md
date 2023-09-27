@@ -64,8 +64,12 @@ Para poder utilizar la app debe ingresar a cualquier navegador y escribir:
 ```
 http://localhost:3000
 ```
+![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/a3364418-7ee3-462f-b982-0f2458145385)
 
 Una vez en la página principal, para el test puede utilizar los siguientes usuarios con privilegios de administrador, moderador y usuario común
+
+![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/90b345e9-bc4a-45e3-a72f-787597ebd2f0)
+
 
     ► email = "administrador@example.com"
     ► password = "12345678"
