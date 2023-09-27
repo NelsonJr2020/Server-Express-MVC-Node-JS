@@ -12,7 +12,7 @@ El proyecto está firmemente arraigado sobre Sequelize y sobre los servicios des
 
 ## Instalación
 
-Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión que figura en el archivo «package.json»: 
+Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión del archivo «package.json»: 
     ✔ [express](https://expressjs.com/es/starter/installing.html)
     ✔ [sequelize](https://sequelize.org)
     ✔ [helmet](https://helmetjs.github.io)
@@ -56,9 +56,9 @@ Una vez realizados estos pasos, va en la ruta correcta; ahora debe ejecutar en l
 ```bash
 $ npm run dev
 ```
-y con esto da inicio a la app por primera vez. Si todo salió bien y no tiene errores. 
+y con esto da inicio a la app por primera vez. 
 
-Ahora con la base de datos creada y con los usuarios cargados desde el arhivo de configuración, podrá utilizar los siguientes usuarios para el test.
+Si todo salió bien y no tiene errores y ahora con la base de datos ya creada y con los usuarios cargados desde el arhivo de configuración json, podrá utilizar los siguientes usuarios para el test.
 
 /* USUARIOS CON PRIVILEGIOS PARA EL USO DE LA APP */
 
