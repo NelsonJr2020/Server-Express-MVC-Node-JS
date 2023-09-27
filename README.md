@@ -1,5 +1,5 @@
  
-# PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, MORGAN, SEQUELIZE, HELMET, DOTENV, PATH, EXPRESS-SESSION
+# PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
 
 Este servidor es un prototipo de una webapp para un foro multiusuario aprovechando el basto desarrollo de bibliotecas para node js.
 En la plataforma existen los roles de Administrador, Moderador y Usuario, y está la sección de publicaciones, dónde 
@@ -17,6 +17,7 @@ Para el proyecto se necesitan de las siguientes dependencias de node-js y el nod
     ✔ [sequelize](https://sequelize.org)
     ✔ [helmet](https://helmetjs.github.io)
     ✔ [express-session](https://github.com/expressjs/session)
+    ✔ [ejs](https://ejs.co)
     ✔ [body-parser](https://www.npmjs.com/package/body-parser)
     ✔ [cookie-parser](https://www.npmjs.com/package/cookie-parser)
     ✔ [dotenv](https://www.npmjs.com/package/dotenv)
