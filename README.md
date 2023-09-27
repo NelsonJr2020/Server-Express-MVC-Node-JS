@@ -156,8 +156,8 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `passwo
 ***
 ### PUESTA EN MARCHA
 Una vez realizados los pasos previos,
-  1 - Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido 
-  2 - Debe ejecutar en la consola el siguiente comando: 
+  1 - Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido\
+  2 - Debe ejecutar en la consola el siguiente comando:\
 ```bash
 $ npm run dev
 ```
