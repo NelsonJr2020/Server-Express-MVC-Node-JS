@@ -1,0 +1,95 @@
+/* ANIMATIONS */
+
+/* ROTACIÓN DEL LOGO */
+@keyframes rotate-logo {
+    0% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    } 
+}
+
+/* SACUDIDA HORIZONTAL */
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+    77% {
+        transform: translateX(0px);
+    }
+    82% {
+        transform: translateX(3px);
+    }
+    85% {
+        transform: translateX(0px);
+    }
+    87% {
+        transform: translateX(3px);
+    }
+    89% {
+        transform: translateX(-2px);
+    }
+    91% {
+        transform: translateX(1px);
+    }
+    93% {
+        transform: translateX(0px);
+    }
+    96% {
+        transform: translateX(-1px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* BRILLO */
+@keyframes shiny {
+    0% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,.777));
+    }
+    77% {
+        filter: drop-shadow(0 0 5px rgba(255,255,255,.777));
+    }
+    82% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,.777));
+    }
+    85% {
+        filter: drop-shadow(0 0 20px rgba(255,255,255,.777));
+    }
+    87% {
+        filter: drop-shadow(0 0 50px rgba(255,255,255,.777));
+    }
+    89% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,.777));
+    }
+    91% {
+        filter: drop-shadow(0 0 10px rgba(255,255,255,.777));
+    }
+    93% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,.777));
+    }
+    96% {
+        filter: drop-shadow(0 0 20px rgba(255,255,255,.777));
+    }
+    100% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,.777));
+    }
+}
+
+/* CLICKEAME */
+@keyframes clickme {
+    0% {
+        transform: scale(1);        
+    }
+    50% {
+        transform: scale(1.05);        
+    }
+    100% {
+        transform: scale(1);            
+    }
+}

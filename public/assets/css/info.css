@@ -1,0 +1,89 @@
+/* public/assets/css/info.css */
+
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px 80px;
+}
+.grid {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+ul.grid {
+	list-style: none;
+}
+.about hr {
+	width: 450px;
+	height: 2px;
+	background-color: #111177;
+	border: 0;
+	margin-bottom: 50px;
+}
+.about .img {
+	filter: grayscale(1);
+}
+.about .img:hover {
+	filter: grayscale(0);
+}
+.about .image-1 {
+	background-image: url("https://img.freepik.com/free-photo/inspired-african-guy-pointing-finger-laughing-positive-black-man-smiling_197531-20236.jpg");
+}
+.about .image-2 {
+	background-image: url("https://img.freepik.com/premium-photo/group-people-are-talking-laughing_750054-484.jpg");
+}
+.about .image-3 {
+	background-image: url("https://img.freepik.com/premium-photo/business-people-lawyers-shaking-hands-finishing-up-meetings-negotiations-sunny-offices-business-handshake-partnership-selective-focus_530697-15873.jpg");
+}
+.about .image-4 {
+	background-image: url("https://img.freepik.com/free-photo/curly-girl-eyeglasses-holds-notebooks-purple-wall_197531-23785.jpg");
+}
+.about h3.title {
+	text-transform: capitalize;
+	font-family: georgia;
+	font-size: 48px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #777;
+}
+.about p {
+	max-width: 775px;
+	line-height: 2;
+	padding: 0 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #555;
+}
+.about .grid li {
+	height: 350px;
+	padding: 20px;
+	background-clip: content-box;
+	background-size: cover;
+}
+.about .grid li.small {
+	flex-basis: 30%;
+	background-position: 20%;
+}
+.about .grid li.large {
+	flex-basis: 70%;
+	background-position: center;
+}
+@media (max-width: 1100px) {
+	.about .grid li.small,
+	.about .grid li.large {
+		flex-basis: 50%;
+	}
+}
+@media (max-width: 800px) {
+	.about .grid li.small,
+	.about .grid li.large {
+		flex-basis: 100%;
+	}
+}
+@media (max-width: 800px) {
+	.about {
+		padding: 50px 20px;
+	}
+}

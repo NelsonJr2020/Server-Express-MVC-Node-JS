@@ -1,0 +1,165 @@
+/* public/assets/css/profile.css */
+
+h1 {
+    font-size: 20px;
+    font-family: 'Saira Condensed', sans-serif;
+    margin-top: 120px;
+}
+.card {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0 0px;
+    border: 3px solid ivory;
+    overflow: hidden;
+}
+.card-header {
+    width: 100%;
+    font-family: verdana;
+    font-weight: bold;
+    background-color: white;
+}
+.image-card {
+    border: 7px solid white;
+    border-radius: 50%;
+    margin-top: 15px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-group {
+    margin-left: 20px;
+    position: relative;
+    width: 100%;
+    padding: 2px;
+    font-style: italic;
+}
+.form-group label {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+.form-group input {
+    margin-top: -7px;
+    margin-bottom: 10px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    float: left;
+    color: #333;
+}
+.form-group input:focus {
+    box-shadow: 1px 1px 2px #333 inset;
+    border-bottom: 2px solid #936;
+    background-color: #55ff5512;
+}
+.form-group input[type="color"] {
+    width: 80%;
+}
+.suggestion {
+    position: absolute;
+    top: 367px;
+    right: 44px;
+    color: gray;
+    font-size: 10px;
+}
+.role {
+    font-size: 16px;
+    font-style: normal;
+    width: auto;
+}
+.update-profile {
+    position: relative;
+}
+.update-profile button {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    width: 80px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: #33333355;
+    margin-top: 15px;
+    margin-left: 170px;
+    border: 2px solid #333;
+}
+.delete-profile {
+    background-color: #00000088;
+    height: 18px;
+}
+.delete-profile:hover {
+    background-color: #000000cc;
+}
+.delete-profile button {
+    width: fit-content;
+    border-radius: 6px;
+    font-size: 10px;
+    text-align: center;
+    float: right;
+    background-color: transparent;
+    margin-right: 10px;
+}
+p.delete {
+    color: darkgray;
+    text-align: right;
+    float: right;
+    width: fit-content;
+    cursor: pointer;
+}
+p.delete:hover {
+    color: red;
+}
+.color {
+    margin-top: 25px;
+}
+.avatar-options {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 20px;
+    border-radius: 10px;
+}
+.avatar-button {
+    cursor: pointer;
+}
+.avatar-button img {
+    width: 100px;
+}
+.avatar-option {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 0px;
+}
+.avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.state {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 4px;
+    width: fit-content;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+}
+.activate {
+    background-color: green;
+    color: white;
+}
+.inactivate {
+    background-color: brown;
+    color: white;
+}

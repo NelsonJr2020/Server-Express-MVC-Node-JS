@@ -1,0 +1,40 @@
+/* public/assets/css/main.css */
+
+/* IMPORTACIONES DE FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap');
+
+/* ROOT * HTML Y BODY */
+:root {
+    --index: calc(1vw+1vh);
+}
+
+* {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightcyan;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* MAIN SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+    background: #111;
+    z-index: -1000 !important;
+}
+::-webkit-scrollbar-thumb {
+    background: #57f;
+    border-radius: 90px;
+    z-index: -100 !important;
+}
+main.container-fluid {
+    min-height: calc(100vh + (120px + 80px));
+    margin-top: 110px;
+}

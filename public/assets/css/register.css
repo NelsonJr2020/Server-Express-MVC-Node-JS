@@ -1,0 +1,251 @@
+/* public/assets/css/register.css */
+
+/* REGISTER STYLE */
+.section-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ff559955;
+    border: 2px solid #777;
+    border-radius: 10px;
+    width: fit-content;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    filter: drop-shadow(2px 2px 4px #777);
+}
+.inner-register {
+    filter: drop-shadow(1px 1px 2px #555);
+    border-radius: 7px;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+.light-image-register {
+    position: absolute;
+    top: -18px;
+    left: -480px;
+    width: 1500px;
+    border-radius: 47%;
+    height: 390px;
+    -o-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 2px rgba(255,255,255,0.3),
+            inset 0 180px rgba(255,255,255,0.15),
+            inset 0 40px 70px rgba(255,255,255,0.25),
+            inset 0 -15px 60px rgba(0,0,0,0.3);
+
+        -webkit-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 2px rgba(255,255,255,0.3),
+            inset 0 180px rgba(255,255,255,0.15),
+            inset 0 40px 70px rgba(255,255,255,0.25),
+            inset 0 -15px 60px rgba(0,0,0,0.3);
+
+        -moz-box-shadow:
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 2px rgba(255,255,255,0.3),
+            inset 0 180px rgba(255,255,255,0.15),
+            inset 0 40px 70px rgba(255,255,255,0.25),
+            inset 0 -15px 60px rgba(0,0,0,0.3);
+        
+        box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 2px rgba(255,255,255,0.3),
+            inset 0 180px rgba(255,255,255,0.15),
+            inset 0 40px 70px rgba(255,255,255,0.25),
+            inset 0 -15px 60px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+.image-register {
+    max-width: 540px;
+    z-index: -1; 
+}
+.form-register {
+    background-image: linear-gradient(to top, #B6A 10%, #fff 40%, #9CF 100%);
+    -o-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+
+        -webkit-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+
+        -moz-box-shadow:
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+        
+        box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+    border-top: 2px solid #333;
+    padding: 20px;
+    padding-right: 60px;
+    width: 100%;
+    height: 100%;
+}
+.div-register {
+    padding: 10px;
+}
+.div-register .date {
+    width: 160px;
+    float: right;
+    padding-left: 10px !important;
+}
+.input-register {
+    background-color: #eee;
+    outline: none;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    padding: 6px;
+    max-width: 333px;
+    float: right;
+    z-index: 1;
+}
+.input-register:focus {
+    border: 1px solid #444;
+    box-shadow: 1px 1px 2px black inset;
+}
+.input-register .date {
+    text-align: left;
+}
+.inner {
+    position: relative;
+}
+.inner input {
+    padding-left: 36px !important;
+}
+.inner i {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    padding: 12px 12px;
+    pointer-events: none;
+    background-size: cover;
+}
+.icon-user {
+    background-image: url(/assets/icons/user.svg);
+    background-repeat: no-repeat;
+}
+.icon-mail {
+    background-image: url(/assets/icons/mail.svg);
+    background-repeat: no-repeat;
+}
+.icon-lock {
+    background-image: url(/assets/icons/lock.svg);
+    background-repeat: no-repeat;
+}
+.input-register:valid {
+    border: 2px solid #444;
+    font-weight: bolder;
+    background-color: #33FF6623;
+}
+.input-register:invalid {
+    border: 2px solid #F44;
+    background-color: #e3e3e3;
+}
+.input-register + span {
+    position: relative;
+}
+.input-register + span::before {
+    font-size: 24px;
+    position: absolute;
+    left: 355px;
+    top: 0px;
+}
+.date + span::before {
+    font-size: 24px;
+    position: absolute;
+    left: 266px;
+    top: 0px;
+}
+.input-register:invalid + span::before {
+    content: "✖";
+    color: red;
+}
+.input-register:valid + span::before {
+    content: "✓";
+    color: green;
+}
+.add-register {
+    font-size: 12px;
+    color: #999;
+    padding-left: 33px;
+    text-align: left;
+    float: left;
+}
+.label-register {
+    display: inline-block;
+    text-align: left;
+}
+.buttons-register {
+    margin-left: 20px;
+    display: inline-block;
+    width: 100%;
+    font-family: Arial;
+    
+}
+.button-register {
+    font-size: 18px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(36, 36, 36), 0px 0px 5px rgb(121, 121, 121);
+    background-image: linear-gradient(to bottom, rgb(224, 158, 180) 0%, rgb(146, 0, 70) 100%);
+    -o-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+
+        -webkit-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+
+        -moz-box-shadow:
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+        
+        box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3);
+    transition: all .75s ease;
+    z-index: 200;
+}
+.smbtn {
+    width: 90px;
+}
+.button-register:hover {
+    display: inline-block;
+    border-radius: 18px;
+    color: khaki;
+    text-shadow: 0px 0px 2px rgb(32, 32, 32), 0px 0px 15px rgb(32, 32, 32);
+    background-image: linear-gradient(to bottom, rgb(255, 207, 229) 0%, rgb(199, 0, 103) 100%);
+    filter: drop-shadow(0 0 4px white);
+}

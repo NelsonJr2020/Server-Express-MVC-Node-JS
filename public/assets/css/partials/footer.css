@@ -1,0 +1,121 @@
+/* public/assets/css/partials/footer.css */
+
+footer {
+    background-color: #0a4275;
+    height: fit-content;
+    color: ivory;
+    font-family: monospace;
+    font-size: 13px;
+    z-index: 1 !important;
+}
+footer section {
+    font-size: 16px;
+    font-family: verdana;
+}
+footer section a {
+    animation: shiny 10s infinite ease-in-out;
+}
+footer button {
+    margin-top: 10px;
+}
+footer button:hover {
+    animation: clickme 1s infinite;
+}
+footer span {
+    margin-top: 10px;
+    color: gold;
+    animation: shake 10s infinite ease-in-out;
+}
+footer .icons-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+footer .icons-footer a {
+    margin: 5px 5px;
+    text-decoration: none;
+    transition: 0.6s ease-in-out;
+}
+footer .icons-footer a:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+footer .icons-footer div {
+    width: 30px;
+    height: 30px;
+    background-color: ivory;
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-position: 50% 50%;
+    border-radius: 50%;
+}
+footer .linkedin {
+    margin-left: 5px;
+    background-image: url(/assets/icons/linkedin.svg);
+}
+footer .github {
+    margin-right: 5px;
+    background-image: url(/assets/icons/github.svg);
+}
+footer .text-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 50px;
+}
+footer .button {
+    color: white;
+    backface-visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    border-width: 1px 1px 1px 1px;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+    -o-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3) !important;
+
+        -webkit-box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3) !important;
+
+        -moz-box-shadow:
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3) !important;
+        
+        box-shadow: 
+            0 2px 8px rgba(0,0,0,0.5),
+            inset 0 1px rgba(255,255,255,0.3),
+            inset 0 25px rgba(255,255,255,0.1),
+            inset 0 10px 20px rgba(255,255,255,0.25),
+            inset 0 -15px 30px rgba(0,0,0,0.3) !important;
+    transition: 0.6s ease-in-out;
+}
+footer .button:hover {
+    text-shadow: 0px -1px 0.5px rgba(0,0,0,0.8);
+    box-shadow: inset 0px -1px 10px rgba(255,255,255,1),0px 1px 10px rgba(0,0,0,0.333);
+}
+footer .agata {
+    background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+}
+footer .tree {
+    background: linear-gradient(to bottom,  #d7f1ba 0%,#abe362 50%,#9bd641 51%,#a0da66 100%);
+}
+.no.animation {
+    animation: none !important;
+}
+.margin-left {
+    margin-left: 15px;
+}

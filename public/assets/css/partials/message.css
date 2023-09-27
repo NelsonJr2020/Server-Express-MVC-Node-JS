@@ -1,0 +1,52 @@
+/** ALERT MESSAGE **/
+
+/* Contenedor de mensajes */
+.messages-container {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 400px; /* Ancho del contenedor de mensajes */
+  padding: 10px 10px 0 12px;
+  background-color: rgba(255, 255, 255, 0); /* Color de fondo */
+  border-radius: 10px;
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si los mensajes desbordan */
+  z-index: 999; /* Asegura que los mensajes estén por encima de otros elementos */
+}
+
+/* Lista de mensajes */
+.message-list {
+  list-style-type: none !important;
+  padding: 0 !important;
+}
+
+/* Elemento de mensaje */
+.message-item {
+  display: hidden;
+  text-align: left;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 7px;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.5s !important; /* Animación de desplazamiento hacia arriba */
+}
+.success {
+  color: #333;
+  border: 3px solid #33333333;
+  background-color: rgba(157, 255, 135, 0.90);
+}
+.warning {
+  color: #333;
+  border: 3px solid #33333333;
+  background-color: rgba(255, 239, 131, 0.90);
+}
+.error {
+  color: #333;
+  border: 3px solid #33333333;
+  background-color: rgba(255, 138, 138, 0.90);
+}

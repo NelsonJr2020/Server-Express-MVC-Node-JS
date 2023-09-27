@@ -1,0 +1,73 @@
+.card {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px;
+    background-image: linear-gradient(to bottom, rgb(156, 242, 233) 15%, rgb(41, 223, 205) 50%, rgb(13, 181, 170) 100%);
+    border: 5px solid #555;
+}
+.card h1 {
+    font-family: verdana;
+    font-size: 40px;
+    color: rgb(76, 11, 189);
+    text-shadow: .5px .5px 1px #339,
+                  1px  1px 1px #77a,
+                  2px  2px 1px #aad;
+}
+.mb-3 label {
+    width: 100%;
+    text-align: left;
+    color: slateblue;
+    margin-bottom: -4px;
+}
+.card input {
+    border: 1px solid gray;
+}
+.card input:focus {
+    box-shadow: 2px 2px 2px #333 inset;
+}
+.card input:hover {
+    background-color: rgb(208, 192, 255);
+    box-shadow: 2px 2px 2px #333 inset;
+}
+.close {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-family: impact;
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+    background-color: #333;
+    border-radius: 10px;
+    border: 2px solid ivory;
+    width: 40px;
+    height: 40px;
+    padding-bottom: 5px;
+    text-shadow: .5px  .5px 2px darkgrey,
+                -.5px -.5px 2px silver;
+    filter: drop-shadow(1px 1px 2px black);
+    z-index: 25;
+}
+.save {
+    background-color: rgb(69, 72, 91);
+    border: 3px solid #555;
+    font-weight: bold;
+    font-size: 13px;
+    color: #eee;
+    text-shadow: 0.5px    1px 2px #333,
+                -0.5px -1px 1px  #fff;
+    width: 170px;
+    height: 50px;
+
+}
+.save:hover {
+    background-color: rgb(229, 244, 229);
+    border: 3px solid #aaa;
+    color: #555;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 8px;
+    width: 170px;
+    height: 50px;
+}
