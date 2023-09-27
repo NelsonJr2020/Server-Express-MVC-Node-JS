@@ -1,0 +1,85 @@
+{
+    "baseTemplate": "base",
+    "partials": {
+      "head": "head",
+      "msg": "msg",
+      "navbar": "navbar",
+      "footer": "footer"
+    },
+    "content": {
+      "index": "index",
+      "login": "login",
+      "register": "register",
+      "user": "user",
+      "users": "users",
+      "profile": "profile",
+      "useredit": "useredit",
+      "post": "post",
+      "posts": "posts",
+      "postcreate": "postcreate",
+      "postedit": "postedit",
+      "info": "info"
+    },
+    "views": {
+      "index": {
+        "title": "FORO ESTUDIANTIL",
+        "header": "BIENVENID@, ESTE ES UN ESPACIO PENSADO PARA VOS...",
+        "template": "index"
+      },
+      "login": {
+        "title": "LOGIN",
+        "header": "INICIO DE SESIÓN",
+        "template": "login"
+      },
+      "register": {
+        "title": "REGISTRO",
+        "header": "REGISTRO DE USUARIO",
+        "template": "register"
+      },
+      "user": {
+        "title": "VER USUARIO",
+        "header": "VISTA DE USUARIO",
+        "template": "user"
+      },
+      "users": {
+        "title": "VER USUARIOS",
+        "header": "VISTA DE USUARIOS REGISTRADOS",
+        "template": "users"
+      },
+      "profile": {
+        "title": "PERFIL USUARIO",
+        "header": "PERFIL DE USUARIO",
+        "template": "profile"
+      },
+      "useredit": {
+        "title": "EDITAR USUARIO",
+        "header": "EDITAR USUARIO",
+        "template": "useredit"
+      },
+      "post": {
+        "title": "VER PUBLICACIÓN",
+        "header": "PUBLICACIÓN",
+        "template": "post"
+      },
+      "posts": {
+        "title": "VER PUBLICACIONES",
+        "header": "LISTADO DE PUBLICACIONES",
+        "template": "posts"
+      },
+      "postcreate": {
+        "title": "PUBLICAR",
+        "header": "CREAR PUBLICACIÓN",
+        "template": "postcreate"
+      },
+      "postedit": {
+        "title": "EDITAR PUBLICACIÓN",
+        "header": "EDITAR PUBLICACIÓN",
+        "template": "postedit"
+      },
+      "info": {
+        "title": "INFORMACIÓN",
+        "header": "INFORMACIÓN SOBRE EL SITIO WEB",
+        "template": "info"
+      }
+    }
+}

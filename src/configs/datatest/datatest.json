@@ -1,0 +1,306 @@
+{
+    "users": [
+        {
+            "firstName": "Eliana",
+            "lastName": "Martinez",
+            "userName": "sexycrazy07",
+            "email": "administrador@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0997-267-1133",
+            "role": 1,
+            "birthDate": "1977-05-03",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Ricardo",
+            "lastName": "Gonzalez",
+            "userName": "thefirstman",
+            "email": "moderador@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0997-447-1233",
+            "role": 2,
+            "birthDate": "1969-07-20",
+            "gender": "Masculino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Melissa",
+            "lastName": "Fleming",
+            "userName": "thefirstman",
+            "email": "melissa.fleming@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0740-304-475",
+            "role": 3,
+            "birthDate": "1980-04-19",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Alicia",
+            "lastName": "Justo",
+            "userName": "thekarma",
+            "email": "alicia.justo@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0740-804-475",
+            "role": 3,
+            "birthDate": "1976-03-24",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Miguel",
+            "lastName": "Martin",
+            "userName": "intherain",
+            "email": "miguel.martin@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0210-209-655",
+            "role": 3,
+            "birthDate": "1982-12-31",
+            "gender": "Masculino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Exequiel",
+            "lastName": "Fernandez",
+            "userName": "internauta",
+            "email": "exe.fernandez@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0900-102-477",
+            "role": 3,
+            "birthDate": "1986-10-15",
+            "gender": "Masculino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Jaime",
+            "lastName": "Otreto",
+            "userName": "thefoolishheart",
+            "email": "jaime.otreto@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0640-004-152",
+            "role": 3,
+            "birthDate": "1972-09-09",
+            "gender": "Masculino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Edgardo",
+            "lastName": "Sanchez",
+            "userName": "theflutteresh",
+            "email": "edgardo.sanchez@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0657-387-400",
+            "role": 3,
+            "birthDate": "1970-01-16",
+            "gender": "Masculino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Elisa",
+            "lastName": "Carriego",
+            "userName": "lareinadelsur",
+            "email": "elisa.carriego@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0150-009-488",
+            "role": 3,
+            "birthDate": "1968-10-22",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Karina",
+            "lastName": "Alazar",
+            "userName": "ponytails",
+            "email": "kari.alazar@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0662-111-987",
+            "role": 3,
+            "birthDate": "1994-07-30",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Sonia",
+            "lastName": "Cage",
+            "userName": "mortalkombat",
+            "email": "sonia.cage@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0230-601-982",
+            "role": 3,
+            "birthDate": "1975-11-25",
+            "gender": "Femenino",
+            "isActive": 1
+        },
+        {
+            "firstName": "Luis Antonio",
+            "lastName": "Merovingio",
+            "userName": "cazarecompenzas",
+            "email": "luisa.merovingio@example.com",
+            "password": "$2a$10$.Lat0xf0Se07exgDIGRYKO83seaJHbxRgO1GmFUia20isMOVYZ7Gy",
+            "phone": "0980-702-372",
+            "role": 3,
+            "birthDate": "1981-02-08",
+            "gender": "Masculino",
+            "isActive": 0
+        }
+    ],
+    "profile": [
+        {
+            "profileId": 1,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 2,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 3,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 4,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 5,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 6,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 7,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 8,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 9,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 10,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 11,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        },
+        {
+            "profileId": 12,
+            "color": "#ffffff",
+            "avatar": "https://img.freepik.com/free-vector/faceless-human-model-blank-dummy-part-male-female-body-isolated-background_1441-2248.jpg"
+        }
+    ],
+    "posts": [
+        {
+            "guid": "20e2e952-f2b8-4442-8ed8-3561db55c8bc",
+            "title": "Sequelize v6",
+            "content": "Sequelize is a promise-based Node.js ORM tool for Postgres, MySQL, MariaDB, SQLite, Microsoft SQL Server, Oracle Database, Amazon Redshift and Snowflake's Data Cloud. It features solid transaction support, relations, eager and lazy loading, read replication and more. Sequelize follows Semantic Versioning and supports Node v10 and above. You are currently looking at the Tutorials and Guides for Sequelize. You might also be interested in the API Reference. Quick example const { Sequelize, Model, DataTypes } = require('sequelize'); const sequelize = new Sequelize('sqlite::memory:'); class User extends Model {} User.init({ username: DataTypes.STRING, birthday: DataTypes.DATE }, { sequelize, modelName: 'user' }); (async () => { await sequelize.sync(); const jane = await User.create({ username: 'janedoe', birthday: new Date(1980, 6, 20) }); console.log(jane.toJSON()); })(); To learn more about how to use Sequelize, read the tutorials available in the left menu. Begin with Getting Started.",
+            "img": "https://img.freepik.com/free-psd/technology-icon-rendering_23-2150613835.jpg",
+            "userId": "6",
+            "datePost": "2023-09-26 02:11:00"
+        },
+        {
+            "guid": "f82bfb1a-3a6a-4d19-a3f3-0d7df0b64e50",
+            "title": "Express.js",
+            "content": "Express.js is a fast, unopinionated, minimalist web framework for Node.js. It is designed for building web applications and APIs. With its robust set of features and middleware support, Express makes it easy to develop powerful web applications quickly. To get started with Express, you need to install it via npm. Here's a basic example of setting up an Express app: \n\n```javascript\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(3000, () => {\n  console.log('Express app listening on port 3000!');\n});\n```\n\nYou can learn more about Express.js by checking out its official documentation and tutorials.",
+            "img": "https://img.freepik.com/free-photo/technology-elements-background_23-2148882634.jpg",
+            "userId": "7",
+            "datePost": "2023-09-27 10:30:00"
+          },
+          {
+            "guid": "b73e45d7-1273-4b36-8c90-79b3a433fccc",
+            "title": "Node.js Events Module",
+            "content": "The Node.js Events module allows you to work with events in Node.js. It provides an EventEmitter class that can be used to bind and listen for events. Here's a simple example of using the Events module: \n\n```javascript\nconst EventEmitter = require('events');\n\nconst myEmitter = new EventEmitter();\n\nmyEmitter.on('myEvent', () => {\n  console.log('Event triggered!');\n});\n\nmyEmitter.emit('myEvent');\n```\n\nYou can use the Events module to build event-driven applications and handle asynchronous operations effectively.",
+            "img": "https://img.freepik.com/free-photo/ai-site-helping-with-software-production_1268-21620.jpg",
+            "userId": "8",
+            "datePost": "2023-09-28 15:45:00"
+          },
+          {
+            "guid": "a1d6708d-6d7e-4e42-a1aa-d84c0d893e24",
+            "title": "Socket.io",
+            "content": "Socket.io is a JavaScript library that enables real-time, bidirectional communication between clients and servers. It works seamlessly with Node.js and allows you to build interactive web applications with features like chat, notifications, and live updates. Here's a basic example of using Socket.io to create a chat application: \n\n```javascript\nconst express = require('express');\nconst http = require('http');\nconst socketIo = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = socketIo(server);\n\nio.on('connection', (socket) => {\n  console.log('A user connected');\n  socket.on('chat message', (msg) => {\n    io.emit('chat message', msg);\n  });\n  socket.on('disconnect', () => {\n    console.log('User disconnected');\n  });\n});\n\nserver.listen(3000, () => {\n  console.log('Socket.io server listening on port 3000');\n});\n```\n\nSocket.io is widely used for building real-time web applications.",
+            "img": "https://img.freepik.com/free-vector/two-hands-pluging_1212-853.jpg",
+            "userId": "9",
+            "datePost": "2023-09-29 20:15:00"
+          },
+          {
+            "guid": "c901e8a6-2380-45c4-b8a7-2b8b63f4ac5a",
+            "title": "Constructors and Prototypes",
+            "content": "JavaScript uses constructors and prototypes for object creation. Constructors are functions used to create objects with specific properties and methods. Prototypes are used to define shared methods and properties for objects created from the same constructor. Understanding how constructors and prototypes work is crucial for effective object-oriented programming in JavaScript.",
+            "img": "https://img.freepik.com/free-photo/programming-background-collage_23-2149901779.jpg",
+            "userId": "10",
+            "datePost": "2023-10-02 09:30:00"
+          },
+          {
+            "guid": "16a92dab-6f17-47f6-af52-5f82f4c5e562",
+            "title": "Inheritance in JavaScript",
+            "content": "JavaScript supports prototypal inheritance, where objects inherit properties and methods from other objects. This allows you to create hierarchies of objects and reuse code efficiently. Understanding how inheritance works in JavaScript helps you design flexible and maintainable code.",
+            "img": "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150061999.jpg",
+            "userId": "11",
+            "datePost": "2023-10-03 14:45:00"
+          },
+          {
+            "guid": "7bbf5023-bf7d-4f33-8bbd-2b0dd8f57110",
+            "title": "ES6 Classes",
+            "content": "ECMAScript 6 (ES6) introduced class syntax to JavaScript, making it easier to create and work with classes and objects. ES6 classes provide a more familiar and structured way to implement object-oriented programming concepts like encapsulation and inheritance.",
+            "img": "https://img.freepik.com/free-photo/programming-background-with-html_23-2150038852.jpg",
+            "userId": "12",
+            "datePost": "2023-10-04 18:20:00"
+          },
+          {
+            "guid": "d067b3cc-7b2c-4de4-8e36-c3d8f7b9431f",
+            "title": "Getting Started with EJS Templates in Node.js",
+            "content": "EJS (Embedded JavaScript) is a popular template engine for Node.js applications. It allows you to embed JavaScript code directly within your HTML templates, making it easy to generate dynamic content. In this tutorial, you'll learn how to set up EJS in a Node.js project, create reusable templates, pass data to templates, and render dynamic web pages.",
+            "img": "https://img.freepik.com/free-photo/programming-background-collage_23-2149901782.jpg",
+            "userId": "5",
+            "datePost": "2023-10-10 11:15:00"
+          },
+          {
+            "guid": "a160b3fe-283a-14ea-1d42-f9a4f6c3718a",
+            "title": "Seguridad de contraseñas en aplicaciones web con bcryptjs",
+            "content": "Introducción: La seguridad de las contraseñas es una preocupación fundamental en el desarrollo de aplicaciones web. En esta publicación, exploraremos cómo utilizar bcrypt, una biblioteca de hashing de contraseñas ampliamente utilizada en Node.js, para proteger las contraseñas de los usuarios en nuestras aplicaciones web. Contenido: ¿Qué es bcrypt? Explicación breve de qué es bcrypt y por qué es necesario en la seguridad de contraseñas. Instalación de bcrypt en Node.js Instrucciones para instalar bcrypt en una aplicación Node.js utilizando npm. Hashing de contraseñas con bcrypt Cómo usar bcrypt para generar un hash seguro de las contraseñas de los usuarios. Comparación de contraseñas Cómo verificar las contraseñas ingresadas por los usuarios con sus hashes almacenados en la base de datos. Mejores prácticas de seguridad Consejos adicionales para mejorar la seguridad de las contraseñas en tu aplicación. Ejemplo de implementación Un ejemplo práctico de cómo usar bcrypt en una aplicación web Node.js.",
+            "img": "https://img.freepik.com/free-vector/cyber-security-concept_23-2148532223.jpg",
+            "userId": "5",
+            "datePost": "2023-08-10 08:15:00"
+          },
+          {
+            "guid": "40bc3af2-413a-af52-56ef-c2f6b25ab678",
+            "title": "Autenticación y autorización en aplicaciones web con JSON Web Tokens (JWT)",
+            "content": "Introducción:La autenticación y la autorización son componentes clave en el desarrollo de aplicaciones web seguras. En esta publicación, exploraremos cómo utilizar JSON Web Tokens (JWT) para implementar un sistema de autenticación y autorización en aplicaciones web. Contenido: ¿Qué son los JSON Web Tokens (JWT)? Una introducción a qué son los JWT y por qué son útiles en aplicaciones web. Estructura de un JWT Explicación de los componentes de un JWT, incluyendo encabezado, carga útil y firma. Generación de JWT en el servidor. Cómo generar y firmar JWT en el servidor después de que un usuario se autentica. Almacenamiento y uso de JWT en el cliente. Cómo almacenar y enviar JWT en las solicitudes del cliente para autenticación y autorización. Verificación de JWT en el servidor: Cómo verificar la validez y autenticidad de JWT en el servidor. Renovación y expiración de tokens: Estrategias para manejar la expiración y renovación de JWT para mantener la seguridad. Mejores prácticas de seguridad: Consejos para garantizar la seguridad de tu implementación de JWT. Ejemplo de implementación: Un ejemplo práctico de cómo usar JWT en una aplicación web Node.js para autenticar y autorizar a los usuarios.",
+            "img": "https://img.freepik.com/free-photo/biometric-technology-background-with-fingerprint-scanning-system-virtual-screen-digital-remix_53876-104937.jpg",
+            "userId": "1",
+            "datePost": "2022-11-13 00:52:00"
+          }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "name": "Administrador"
+        },
+        {
+            "id": 2,
+            "name": "Moderador"
+        },
+        {
+            "id": 3,
+            "name": "Usuario"
+        }
+    ]
+}
