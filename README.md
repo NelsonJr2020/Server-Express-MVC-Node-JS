@@ -1,5 +1,5 @@
  
-# SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, MORGAN, SEQUELIZE, HELMET, DOTENV, PATH, EXPRESS-SESSION
+# PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, MORGAN, SEQUELIZE, HELMET, DOTENV, PATH, EXPRESS-SESSION
 
 Este servidor es un prototipo de una webapp para un foro multiusuario aprovechando el basto desarrollo de bibliotecas para node js.
 En la plataforma existen los roles de Administrador, Moderador y Usuario, y está la sección de publicaciones, dónde 
