@@ -1,189 +1,308 @@
 /* controllers/user.controller.js */
 
 //REQUIRES
-const userService = require('../services/user.service');
+const userService = require("../services/user.service");
+const viewService = require("../services/view.service");
+const messageService = require("../services/message.service");
 
 //CLASE CONTROLADOR DE USUARIOS
 class controllerUsers {
-
-    //CONTROLLER VER TODOS LOS USUARIOS
-    async viewAllUsers(req, res) {
-        if(!req.session.userId) {
-            return res.redirect('/');
-        }
-        const title = "USERS";
-        let users = "";
-        let header = "VISTA DE TODOS LOS USUARIOS";
-        let message = "";
-        const templateName = "users";
-        
-        try {
-            users = await userService.getAllUsers();
-            res.status(200).render('users', { users, header, title, templateName, message });
-        } catch(error) {
-            return res.status(400).render('users', { users, header, title, templateName, message });
-        }
+  //CONTROLLER VER TODOS LOS USUARIOS
+  async viewAllUsers(req, res) {
+    if (!req.session.userId) {
+      res.locals.isAuthenticated = false;
+      return res.redirect("/");
     }
-
-    //CONTROLLER VER USUARIO POR ID
-    async viewUser(req, res) {
-        if(!req.session.userId) {
-            return res.redirect('/');
-        }
-        const { id } = req.params;
-        let title = "VIEW USER";
-        let header = "";
-        let message = "";
-        let user = "";
-        let templateName = "user";
-        try {
-            user = await userService.getUserById(id);
-            header = "VISTA DEL USUARIO: " + user.firstName;
-            return res.status(200).render('user', { user, title, header, templateName, message });
-        } catch(error) {
-            const users = await userService.getAllUsers();
-            message = "No existe el usuario";
-            title = "USERS";
-            header = "LISTADO DE USUARIOS";
-            templateName = "users";
-            return res.status(400).render('users', { users, title, header, templateName, message });
-        }
+    try {
+      const authData = userService.getAuthData(req);
+      const { pageNumber } = req.params;
+      const users = await userService.getAllUsersByPageNumber(pageNumber);
+      const data = {
+        ...authData,
+        messages: messageService.getMessages(),
+        users: users,
+      };
+      res.status(200).send(viewService.viewRender("users", data));
+    } catch (error) {
+      messageService.addMessage(
+        "Hubo un error al obtener los usuarios.",
+        "error"
+      );
+      return res.status(400).redirect("/profile");
     }
+  }
 
-    //CONTROLLER FORMULARIO DE REGISTRO DE USUARIO
-    registerForm(req, res) {
-        if(req.session.userId) {
-            return res.redirect('profile');
-        }
-        try {
-            const title = "REGISTRO";
-            const header = "REGISTRO DE USUARIO";
-            const templateName = "register";
-            let message = "";
-            res.locals.isAuthenticated = false;
-            return res.status(200).render('register', { title, header, templateName, message });
-        } catch(error) {
-            message = error;
-            return res.status(400).render('index', { message });
-        }
+  //CONTROLLER VER USUARIO POR ID
+  async viewUser(req, res) {
+    if (!req.session.userId) {
+      res.locals.isAuthenticated = false;
+      return res.redirect("/");
     }
-
-    //CONTROLLER PROCESAMIENTO DE REGISTRO DE USUARIO
-    async registerProcess(req, res) {
-        const title = "REGISTRO";
-        const header = "REGISTRO DE USUARIO";
-        const templateName = "register";
-        const userBody = req.body;
-        let message = "";
-        const emailExists = await userService.checkEmail(userBody.email);
-        if (emailExists) {
-            const message = "El correo electrónico ya está en uso";
-            return res.status(400).render('register', { title, header, templateName, message });
-        }
-        try {
-            const title = "LOGIN";
-            const header = "INICIO DE SESIÓN";
-            const templateName = "login";
-            message = await userService.createUser(userBody);
-            return res.status(200).render('login', { title, header, templateName, message });
-        } catch(error) {
-            message = error;
-            return res.status(400).render('register', { title, header, templateName, message });
-        }
+    try {
+      const { id } = req.params;
+      const authData = userService.getAuthData(req);
+      const profile = await userService.getProfile(id);
+      const data = {
+        ...authData,
+        messages: messageService.getMessages(),
+        profile: profile,
+      };
+      return res.status(200).send(viewService.viewRender("user", data));
+    } catch (error) {
+      messageService.addMessage("No existe el usuario", "error");
+      // return res.status(400).redirect('/users');
+      return res.status(400).send({ message: error.message });
     }
+  }
 
-    //CONTROLLER FORMULARIO DE LOGIN DE USUARIO
-    loginForm(req, res) {
-        if(req.session.userId) {
-            return res.redirect('profile');
-        }
-        let message = "";
-        try {
-            const title = "LOGIN";
-            const header = "INICIO DE SESIÓN";
-            const templateName = "login";
-            res.locals.isAuthenticated = false;
-            return res.status(200).render('login', { title, header, templateName, message });
-        }
-        catch(error) {
-            message = error;
-            return res.status(400).render('index', { message });
-        }
+  //CONTROLLER MUESTRA PERFIL DE USUARIO
+  async viewProfile(req, res) {
+    if (!req.session.userId) {
+      res.locals.isAuthenticated = false;
+      return res.redirect("/login");
     }
-
-    //CONTROLLER PROCESAMIENTO DE LOGIN DE USUARIO
-    async loginProcess(req, res) {
-        const { email, password } = req.body;
-        let title = "LOGIN";
-        let header = "INICIO DE SESIÓN";
-        let templateName = "login";
-        let message = "";
-        try {
-            const { user, token } = await userService.verifyUserCredentials(req, email, password);
-            res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 }); //3.600.000 ms -> 1 h
-            return res.status(200).redirect('profile');
-        } catch(error) {
-            message = error;
-            return res.status(401).render('login',{ title, header, templateName, message });
-        }
+    try {
+      const authData = userService.getAuthData(req);
+      const profile = await userService.getProfile(authData.userId);
+      const data = {
+        ...authData,
+        messages: messageService.getMessages(),
+        profile: profile,
+      };
+      return res.status(200).send(viewService.viewRender("profile", data));
+    } catch (error) {
+      return res.status(400).send({ message: error.message });
     }
+  }
 
-    //CONTROLLER MUESTRA PERFIL DE USUARIO
-    async profileUser(req, res) {
-        const title = "PROFILE";
-        const header = "PERFIL DE USUARIO";
-        const templateName = "profile";
-        let message = req.session.message;
-        delete req.session.message;
-        try {
-            const id = req.user.userId;
-            const profile = await userService.getProfile(id);
-            message = `${profile.user.firstName} bienvenid@ a tu perfil`;
-            return res.status(200).render('profile', { profile, title, header, templateName, message });
-        } catch(error) {
-            message = error;
-            return res.status(400).render('index', { message });
-        }
+  //CONTROLLER FORMULARIO DE EDICIÓN DE DATOS DE USUARIO
+  async editUserForm(req, res) {
+    try {
+      const { id } = req.params;
+      const authData = userService.getAuthData(req);
+      if (authData.userRole == 1 || authData.userRole == 2) {
+        const profile = await userService.getProfile(id);
+        const data = {
+          ...authData,
+          messages: messageService.getMessages(),
+          profile: profile,
+        };
+        return res.status(200).send(viewService.viewRender("useredit", data));
+      } else {
+        messageService.addMessage(
+          "No posee credenciales para editar un usuario",
+          "error"
+        );
+        return res.status(400).redirect("/users/page/1");
+      }
+    } catch (error) {
+      messageService.addMessage(
+        `Hubo un error con el registro! ${error}`,
+        `error`
+      );
+      return res.status(400).send({ message: error.message });
     }
+  }
 
-    //CONTROLLER ACTUALIZA INFORMACIÓN DE USUARIO
-    async updateUser(req, res) {
-        const { id } = req.params;
-        const userBody = req.body;
-        try {
-            const message = await userService.updateUser(id, userBody);
-            return res.status(200).send({ message });
-        } catch (error) {
-            return res.status(400).send({ message: error.message });
-        }
+  //CONTROLLER FORMULARIO DE REGISTRO DE USUARIO
+  registerForm(req, res) {
+    if (req.session.userId) {
+      return res.redirect("/profile");
+    } else {
+      res.locals.isAuthenticated = false;
     }
-
-    //CONTROLLER ELIMINA UN USUARIO POR ID
-    async deleteUser(req, res) {
-        const { id } = req.params;
-        try {
-            const message = await userService.deleteUser(id);
-            return res.status(200).send({ message });
-        } catch(error) {
-            return res.status(400).send({ message: error.message });
-        }
+    try {
+      const data = {
+        isAuthenticated: res.locals.isAuthenticated,
+        messages: messageService.getMessages(),
+      };
+      return res.status(200).send(viewService.viewRender("register", data));
+    } catch (error) {
+      messageService.addMessage(
+        `Hubo un error con el registro! ${error}`,
+        `error`
+      );
+      return res.status(400).redirect("/");
     }
+  }
 
-    //CONTROLLER CIERRA SESIÓN
-    async closeSession(req, res) {
-        try {
-            const success = await userService.closeSession(req, res);
-    
-            if(success) {
-                res.redirect('/');
-                // return res.status(200).render('/', { message: '¡Gracias por usar la aplicación!' });
-            } else {
-                return res.status(500).send({ message: 'Hubo un error al cerrar la sesión.' });
+  //CONTROLLER PROCESAMIENTO DE REGISTRO DE USUARIO
+  async registerProcess(req, res) {
+    let userBody = req.body;
+    res.locals.isAuthenticated = false;
+    const emailExists = await userService.checkEmail(userBody.email);
+    if (emailExists) {
+      messageService.addMessage(
+        `El correo electrónico ${userBody.email} ya está en uso`,
+        `warning`
+      );
+      const data = {
+        isAuthenticated: res.locals.isAuthenticated,
+        messages: messageService.getMessages(),
+      };
+      return res.status(400).send(viewService.viewRender("register", data));
+    }
+    try {
+      const authData = userService.getAuthData(req);
+      const message = await userService.createUser(userBody);
+      messageService.addMessage(message, "success");
+      const data = {
+        ...authData,
+        messages: messageService.getMessages(),
+      };
+      return res.status(200).send(viewService.viewRender("login", data));
+    } catch (error) {
+      messageService.addMessage(
+        `Error al procesar el registro, reintente por favor! ${error}`,
+        `error`
+      );
+      const data = {
+        isAuthenticated: res.locals.isAuthenticated,
+        messages: messageService.getMessages(),
+      };
+      return res.status(400).send(viewService.viewRender("register", data));
+    }
+  }
+
+  //CONTROLLER FORMULARIO DE LOGIN DE USUARIO
+  loginForm(req, res) {
+    if (req.session.userId) {
+      return res.redirect("/profile");
+    } else {
+      res.locals.isAuthenticated = false;
+    }
+    try {
+      const data = {
+        isAuthenticated: res.locals.isAuthenticated,
+        messages: messageService.getMessages(),
+      };
+      return res.status(200).send(viewService.viewRender("login", data));
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(400).redirect("/");
+    }
+  }
+
+  //CONTROLLER PROCESAMIENTO DE LOGIN DE USUARIO
+  async loginProcess(req, res) {
+    const { email, password } = req.body;
+    try {
+      const { user, token } = await userService.verifyUserCredentials(
+        req,
+        email,
+        password
+      );
+      res.cookie("jwt", token, { httpOnly: true, maxAge: 3600000 }); //3.600.000 ms -> 1 h
+      return res.status(200).redirect("/profile");
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(401).redirect("login");
+    }
+  }
+
+  //CONTROLLER ACTUALIZA INFORMACIÓN DE USUARIO
+  async updateUser(req, res) {
+    const { id } = req.params;
+    const userBody = req.body;
+    try {
+      const authData = userService.getAuthData(req);
+      if (authData.userRole == 1 || authData.userRole == 2) {
+        if (!userBody.isActive) {
+          const desactivate = await userService.desactivateUser(id);
+          if (desactivate) {
+            messageService.addMessage(`El usuario ${userBody.email} fue desactivado`, "success");
+          }
+        } else if (userBody.isActive) {
+          const userIsActive = await userService.checkUserIsActive(id);
+          if (!userIsActive) {
+            const activate = await userService.activateUser(id);
+            if (activate) {
+              messageService.addMessage(`El usuario ${userBody.email} fue desactivado`, "success");
             }
-        } catch(error) {
-            return res.status(500).send({ message: 'Hubo un error al cerrar la sesión.' });
+          }
         }
+        const message = await userService.updateUser(id, userBody);
+        messageService.addMessage(message, "success");
+        return res.status(200).redirect("/users/page/1");
+      } else {
+        messageService.addMessage(
+          "No posee credenciales para editar un usuario",
+          "error"
+        );
+        return res.status(400).redirect("/users/page/1");
+      }
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(400).redirect("/users/page/1");
     }
+  }
+
+  //CONTROLLER ACTUALIZA INFORMACIÓN DE PERFIL DE USUARIO
+  async updateProfile(req, res) {
+    const userBody = req.body;
+    try {
+      const authData = userService.getAuthData(req);
+      if (authData.userActive) {
+        const message = await userService.updateUser(authData.userId, userBody);
+        messageService.addMessage(message, "success");
+        return res.status(200).redirect("/profile");
+      } else {
+        messageService.addMessage(
+          "Ud. se encuentra desactivado por favor contáctese con el administrador",
+          "error"
+        );
+        return res.status(400).redirect("/profile");
+      }
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(400).redirect("/profile");
+    }
+  }
+
+  //CONTROLLER ELIMINA UN USUARIO POR ID
+  async deleteUser(req, res) {
+    const { id } = req.params;
+    try {
+      const authData = userService.getAuthData(req);
+      if (authData.userRole == 1) {
+        const deleteUser = await userService.deleteUser(id);
+        messageService.addMessage(deleteUser, "success");
+        return res.status(200).redirect("/users/page/1");
+      } else {
+        messageService.addMessage(
+          "No posee credenciales para eliminar un usuario",
+          "error"
+        );
+        return res.status(400).redirect("/users/page/1");
+      }
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(400).redirect("/users/page/1");
+    }
+  }
+
+  //CONTROLLER CIERRA SESIÓN
+  async closeSession(req, res) {
+    try {
+      const success = await userService.closeSession(req, res);
+      if (success) {
+        messageService.addMessage(
+          "Muchas gracias por utilizar nuestros servicios!",
+          "success"
+        );
+        return res.status(200).redirect("/");
+      } else {
+        messageService.addMessage(
+          "Ocurrió un error al intentar cerrar la sesión!",
+          "error"
+        );
+        return res.status(500).redirect("/");
+      }
+    } catch (error) {
+      messageService.addMessage(error, "error");
+      return res.status(500).redirect("/");
+    }
+  }
 }
 
 //EXPORTA LA INSTANCIA DE LA CLASE CONTROLADOR DE USUARIOS
