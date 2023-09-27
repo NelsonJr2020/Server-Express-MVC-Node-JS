@@ -11,7 +11,7 @@ Para reducir un poco el código se optó por la exportación de las instancias d
 Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores.
 
 
-## Instalación
+## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 
 ### NODE JS | DEPENDENCIAS
 Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión del archivo «package.json»: 
