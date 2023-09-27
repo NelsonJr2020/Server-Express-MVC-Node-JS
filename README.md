@@ -155,9 +155,9 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `passwo
 - Por último no debe olvidarse que para hacer el login al sistema deberá utilizar la contraseña en "texto plano", ya que la encriptada solo funciona del lado servidor.
 ***
 ### PUESTA EN MARCHA
-Una vez realizados los pasos previos,
+Una vez realizados los pasos previos,\
   1 - Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido\
-  2 - Debe ejecutar en la consola el siguiente comando:\
+  2 - Debe ejecutar en la consola el siguiente comando:
 ```bash
 $ npm run dev
 ```
