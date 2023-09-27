@@ -61,6 +61,23 @@ JWT_SECRET = mi_secreto_secreto_super_secreto
 
 *[ Configuración manual inicial de la db ]*
 - En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar al menos un usuario desde consola mysql o cualquier editor de mysql.
+- Para crear el usuario si o si debe almacenar un email test@example.com, una contraseña encriptada, un nombre y apellido, un rol numérico (1 → administrador, 2 → moderador, 3 → usuario) y el estado isActive = 1.
+- Para generar la contraseña puede correr este código utilizando bcryptjs generando una contraseña provisoria
+  ```javascript
+  const bcrypt = require('bcrypt');
+
+  const plaintextPassword = '12345678'; // Tu contraseña en texto plano
+
+  // Genera una sal aleatoria y encripta la contraseña
+  bcrypt.hash(plaintextPassword, 10, (err, hash) => {
+    if (err) {
+      console.error('Error al encriptar la contraseña:', err);
+    } else {
+      console.log('Contraseña encriptada:', hash);
+      // El valor `hash` es la contraseña encriptada que puedes almacenar en tu base de datos.
+    }
+  });
+  ```
 
 ### PUESTA EN MARCHA
 Una vez realizados los pasos previos,
