@@ -1,0 +1,37 @@
+<!-- views/user.ejs -->
+
+<%
+    const fechaStr = new Date(profile.user.birthDate).toISOString().split('T')[0];
+    const fecha = new Date(fechaStr);
+    const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
+    const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const anio = fecha.getFullYear();
+    const fechaNacimiento = `${dia}-${mes}-${anio}`;
+%>
+<div class="card" id="card">
+    <a href="/users/page/1"><span class="close">&#x2715;</span></a>
+    <div class="card-header">
+        Detalles del Usuario
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="<%= profile.preferences.avatar %>" class="img-fluid" alt="Avatar" />
+            </div>
+            <div class="col-md-8">
+                <h4 class="card-title"><%= profile.user.firstName %> <%= profile.user.lastName %></h4>
+                <p class="card-text">Email: <%= profile.user.email %></p>
+                <p class="card-text">Fecha de Nacimiento: <%= fechaNacimiento %></p>
+                <p class="card-text">Género: <%= profile.user.gender %></p>
+                <p class="card-text">Nivel: <%= profile.role.name %></p>
+                <%  if (!profile.user.isActive) { %>
+                    <p class="card-text">No está activo</p>
+                <% } else { %>
+                    <p class="card-text">Está activo</p>
+                <% } %>
+                <input type="hidden" id="color" value="<%= profile.preferences.color %>"" />
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/ui-user.js"></script>

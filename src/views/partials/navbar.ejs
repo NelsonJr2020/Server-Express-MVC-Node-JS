@@ -1,0 +1,38 @@
+<!-- views/partials/navbar.ejs -->
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark degrade">
+    <div class="container-fluid wrap-elements">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/icons/favicon.png" alt="" width="30" height="30" class="d-inline-block align-text-top" />
+        <span><i>Foro Estudiantil</i></span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/posts/page/1">
+                Publicaciones
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/page/1">
+                Usuarios
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <% if(template === 'login') { } else { if(!isAuthenticated) { %>
+          <a href="/login" class="btn button-in shadow">Iniciar Sesión</a>
+          <% } else { %>
+          <div class="buttons-in">
+            <a href="/profile" class="btn button-in shadow">Perfil</a>
+            <a href="/logout" class="btn button-in shadow">Cerrar Sesión</a>
+          </div>
+          <% } } %>
+        </ul>
+      </div>
+      <header class="row header">
+        <h1><%= header %></h1>
+      </header>
+    </div>
+  </nav>
+</header>

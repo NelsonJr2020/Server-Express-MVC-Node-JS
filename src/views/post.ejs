@@ -1,0 +1,40 @@
+<!-- views/post.ejs -->
+<%
+    const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const date = new Date(post.datePost);
+    const number = date.getDate();
+    const dia = dias[date.getDay()].toLowerCase();
+    const mes = meses[date.getMonth()].toLowerCase();
+    const hora = date.getHours();
+    const minutos = date.getMinutes().toString().padStart(2, '0');
+    const horario = `${hora}:${minutos}`;
+%>
+<div class="card mb-3">
+    <a href="/posts/page/1"><span class="close">&#x2715;</span></a>
+    <div class="image-card">
+        <img src="<%= post.img %>" class="card-img-top" alt="<%= post.title %>" />
+        <p class="card-text dated">Publicado el <%= `${dia} ${number} ${mes} a las ${horario}` %> hs</p>
+    </div>
+        <div class="card-body">
+        <h5 class="card-title title"><%= post.title %></h5>
+        <fieldset class="border p-2 content">
+            <legend class="float-none w-auto p-2 autor">Autor: <%= user.firstName %> <%= user.lastName %></legend>
+            <p class="card-text innerText"><%= post.content %></p>
+        </fieldset>
+        <p class="card-text guid">GUID: #<%= post.guid %></p>
+        <hr>
+<%  if(isAuthenticated) {
+        if(userActive) {
+            if(userRole == 1 || userRole == 2 || (userRole == 3 && (user.id == userId))) { %>
+                <div class="d-flex justify-content-end">
+                    <a href="/post/edit/<%= post.guid %>" class="btn btn-success right">Editar</a>
+                    <form action="/post/delete/<%= post.guid %>" method="POST">
+                        <button class="btn btn-danger right">Eliminar</button>
+                    </form>
+                </div>
+        <%  }
+        }
+    } %>
+    </div>
+</div>

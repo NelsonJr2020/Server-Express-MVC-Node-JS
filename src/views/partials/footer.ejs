@@ -1,0 +1,47 @@
+<!-- src/views/partials/footer.ejs -->
+
+<footer class="text-center text-white fixed-bottom">
+    <div class="container-fluid">
+        <%  if(!isAuthenticated && (template == 'index' || template == 'info')) { %>
+                <section class="sm-10">
+                    <p class="d-flex justify-content-center align-items-center">
+                        
+                        <span class="me-2">Es 100% gratis</span>
+                        
+                        <a href="/register">
+                            <button type="button" class="button agata shadow">
+                                Registrate
+                            </button>
+                        </a>
+                        <a href="/info" class="no-animation">
+                            <button type="button" class="button tree shadow no-animation margin-left">
+                                +INFO
+                            </button>
+                        </a>
+                    </p>
+                </section>
+        <%  }  %>
+    </div>
+    <div class="text-center p-3 text-footer">
+        ♪♫ 2023 Desarollado y diseñado por Nelson Alderete  
+        <div class="sm-10 icons-footer">
+            <a
+                href="https://www.linkedin.com/in/nelson-alderete-tdf2020/"
+                data-bs-toogle="tooltip"
+                data-bs-placement="top"
+                title="nelson-alderete-tdf2020">
+                <div class="linkedin"></div>
+            </a>
+            <a 
+                href="https://github.com/NelsonJr2020/"
+                data-bs-toogle="tooltip"
+                data-bs-placement="top"
+                title="NelsonJr2020">
+                <div class="github"></div>
+            </a>
+        </div>
+        <a class="text-white" href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa/">
+           Argentina Programa 4.0
+        </a>
+    </div>
+</footer>

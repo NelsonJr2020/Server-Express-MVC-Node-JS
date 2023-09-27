@@ -1,0 +1,11 @@
+<!-- views/partials/message.ejs -->
+
+<div id="messages-container" class="messages-container">
+  <% if(messages && messages.length > 0) { %>
+    <ul id="message-list" class="message-list">
+      <% messages.forEach(message => { %>
+        <li class="message-item <%= message.type %>"><%= message.text %></li>
+      <% }); %>
+    </ul>
+  <% } %>
+</div>

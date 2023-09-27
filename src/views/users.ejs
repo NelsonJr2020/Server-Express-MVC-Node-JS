@@ -1,0 +1,79 @@
+<!-- views/users.ejs -->
+
+<table class="table table-primary table-striped table-hover">    
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Perfil</th>
+    <% if(userRole == 1 || userRole == 2) { %>
+        <th>Edición</th>
+    <% } %> 
+    <% if(userRole == 1) { %>
+        <th>Baja</th>
+    <% } %>
+    </thead>
+    <tbody>
+    <% users.forEach(user => { %>
+            <tr>
+                <td> <%= user.firstName %>  </td>
+                <td> <%= user.lastName %>   </td>
+                <td> <%= user.email %>      </td>
+                <td> <form method="get" action="/user/<%= user.id %>"><button class="button viewUser">Ver</button></form></td>
+                <% if(userRole == 1 || userRole == 2) { %>
+                <td> <form method="get" action="/user/edit/<%= user.id %>"><button class="button editUser">Modificar</button></form></td>
+                <% } %> 
+                <% if(userRole == 1) { %>
+                <td> <form method="post" action="/user/delete/<%= user.id %>"><button class="button deleteUser">Eliminar</button></form></td>
+                <% } %>
+            </tr>
+        </a>
+    <% }); %>
+    </tbody>
+</table>
+<ul class="pagination justify-content-center">
+    <li class="page-item" id="previous-page">
+        <a class="page-link bg-secondary text-white" href="#"  aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
+    <li class="page-item active">
+        <a class="page-link bg-dark text-white" href="/users/page/1" data-page="1">1</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/2" data-page="2">2</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/3" data-page="3">3</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/4" data-page="4">4</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/5" data-page="5">5</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/6" data-page="6">6</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/7" data-page="7">7</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/8" data-page="8">8</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/9" data-page="9">9</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link bg-dark text-white" href="/users/page/10" data-page="10">10</a>
+    </li>
+    <li class="page-item" id="next-page">
+        <a class="page-link bg-secondary text-white" href="#"  aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+</ul>
+<script src="/assets/js/ui-users.js"></script>
+<% if(userRole == 1) { %>
+<script src="/assets/js/ui-userdelete.js"></script>
+<% } %>

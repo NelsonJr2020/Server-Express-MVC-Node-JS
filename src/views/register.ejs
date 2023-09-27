@@ -1,0 +1,60 @@
+<!-- views/register.ejs -->
+
+<section class="container-fluid section-register">
+    <div class="inner-register">
+        <img src="https://img.freepik.com/free-photo/pretty-teenager-happy-be-back-university_23-2148586588.jpg" class="image-register" alt="registerimage" />
+        <div class="light-image-register"></div>
+        <form class="form-register" action="/register" method="post">
+            <div class="mb-3 row div-register">
+                <label class="col-sm-2 col-form-label label-register" for="firstName">Nombres:</label>
+                <div class="col-sm-10 inner">
+                    <i class="icon-user"></i>
+                    <input class="form-control input-register" type="text" name="firstName" aria-describedby="emailHelp" required /><span></span>
+                </div>
+            </div>
+            <div class="mb-3 row div-register">
+                <label class="col-sm-2 col-form-label label-register" for="lastName">Apellidos:</label>
+                <div class="col-sm-10 inner">
+                    <i class="icon-user"></i>
+                    <input class="form-control input-register" type="text" name="lastName" aria-describedby="emailHelp" required /><span></span>
+                </div>
+            </div>
+            <div class="mb-3 row div-register">
+                <label class="col-sm-2 col-form-label label-register" for="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+.[a-z]*">Email:</label>
+                <div class="col-sm-10 inner">
+                    <i class="icon-mail"></i>
+                    <input class="form-control input-register" type="email" name="email" aria-describedby="emailHelp" required /><span></span>
+                    <div class="form-text" id="emailHelp">
+                        <add class="add-register">
+                            *Ingrese un email válido para registrarse...
+                        </add>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row div-register">
+                <label class="col-sm-2 col-form-label label-register" for="password">Contraseña:</label>
+                <div class="col-sm-10 inner">
+                    <i class="icon-lock"></i>
+                    <input class="form-control input-register" type="password" name="password" pattern=".{8,}" autocomplete="true" required /><span></span>
+                    <div class="form-text" id="emailHelp">
+                        <add class="add-register">
+                            *Ingrese un password con al menos ocho caracteres...
+                        </add>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row div-register">
+                <label class="col-sm-2 col-form-label label-register" for="birthDate">
+                    Fecha&nbsp;de&nbsp;nacimiento:</label>
+                <div class="col-sm-10 inner">
+                    <input class="form-date input-register date" type="date" name="birthDate" required />
+                    <span></span>
+                </div>
+            </div>
+            <div class="mb-3 row div-register buttons-register"> 
+                <button class="btn button-register" type="submit">Registrarse</button>
+                <a href="/" class="btn button-register smbtn">Volver</a>
+            </div>
+        </form>
+    </div>
+</section>

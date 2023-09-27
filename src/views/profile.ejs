@@ -1,0 +1,67 @@
+<!-- views/profile.ejs -->
+
+<%
+    const fechaNacimiento = new Date(profile.user.birthDate).toISOString().split('T')[0];
+%>
+<div class="container-fluid">
+    <h1>Hola <%= profile.user.firstName %>, bienveni@ a tu perfil</h1>
+    <div class="avatar-options"></div>
+    <div class="card" id="card-color">
+        <div class="card-header">MIS DATOS</div>
+        <div class="avatar-picker">
+            <img class="image-card avatar-button" id="default-avatar" src="<%= profile.preferences.avatar %>" alt="Avatar por defecto" width="100" />
+        </div>
+        <form class="form update-profile" method="post" action="user/update">
+            <input type="hidden" id="avatar-input" name="avatar" value="<%= profile.preferences.avatar %>" />
+            <div class="form-group">
+                <label class="form-label">Nombres:</label> 
+                <input class="form-control form-control-sm" type="text" name="firstName" value="<%= profile.user.firstName %>" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Apellidos:</label> 
+                <input class="form-control form-control-sm" type="text" name="lastName" value="<%= profile.user.lastName %>" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Fecha de nacimiento:</label> 
+                <input class="form-control form-control-sm" type="date" name="birthDate" value="<%= fechaNacimiento %>" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Género:</label> 
+                <input class="form-control form-control-sm" type="text" name="gender" value="<%= profile.user.gender %>" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email:</label>
+                <input class="form-control form-control-sm" type="email" name="email" value="<%= profile.user.email %>" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Contraseña:</label> 
+                <input class="form-control form-control-sm" type="password" name="password" placeholder="Dejar en blanco si no desea cambiarla" autocomplete="true"/>
+                <div class="suggestion">*mínimo 8 caracateres.</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Elige tu color:</label>
+                <input type="color" class="form-control form-control-color" id="color-picker" name="color" value="<%= profile.preferences.color %>" title="Elige tu color">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Nivel: <span class="role"><%= profile.role.name %></span></label>
+            </div>
+            <div class="form-group">
+                <%  if (!profile.user.isActive) { %>
+                    <label class="form-label">
+                        <p class="state inactivate">No está activo</p>
+                    </label>
+                <% } else { %>
+                    <label class="form-label">
+                        <p class="state activate">Está activo</p>
+                    </label>
+                <% } %>
+            </div>
+            <input type="hidden" name="isActive" value="<%= profile.user.isActive %>" />
+            <button class="btn btn-secondary" type="submit">GUARDAR</button>   
+        </form>
+        <form class="form delete-profile" method="post" action="user/delete/<%= profile.user.id %>">
+            <button type="submit"><p class="delete">Eliminar mi perfil</p></button>
+        </form>
+    </div>
+</div>
+<script src="/assets/js/ui-profile.js"></script>

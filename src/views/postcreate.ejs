@@ -1,0 +1,28 @@
+<!-- views/postcreate.ejs -->
+
+<div class="card mb-3">
+    <div class="card-header">
+        Autor: <%= profile.user.firstName %> <%= profile.user.lastName %>
+    </div>
+    <div class="card-body">
+        <form action="/post/create" method="POST">
+            <input type="hidden" name="userId" value="<%= profile.user.id %>" />
+            <div class="form-group">
+                <label for="title" class="form-label">Título</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content" class="form-label">Contenido</label>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="img" class="form-label">URL de la Imagen</label>
+                <input type="text" class="form-control" id="img" name="img" required>
+            </div>
+            <div class="d-flex justify-content-end btns">
+                <button type="submit" class="btn btn-success create-post">Publicar</button>
+                <a href="/posts/page/1" class="btn btn-secondary right">Abandonar</a>
+            </div>
+        </form>
+    </div>
+</div>

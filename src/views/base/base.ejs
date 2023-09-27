@@ -1,0 +1,25 @@
+<!-- views/base/base.ejs -->
+
+<!DOCTYPE html>
+<html>
+    <!-- CÓDIGO DE HEAD -->
+    <%- include(partials.head) %>
+    <body>
+        <!-- MENSAJES -->
+        <%- include(partials.msg) %>
+        <!-- CÓDIGO DE NAVBAR -->
+        <%- include(partials.navbar) %>
+        <!-- CONTENEDOR -->
+        <main class="container-fluid text-center">
+            <!-- CONTENIDO ESPECÍFICO DE LA PÁGINA -->
+            <%- content %>
+        </main>
+        <!-- FOOTER -->
+        <%- include(partials.footer) %>
+        <!-- SCRIPTS -->
+        <script src="/assets/bootstrap/popper.min.js"></script>
+        <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/ui-tool.js"></script>
+        <script src="/assets/js/msg-tool.js"></script>
+    </body>
+</html>
