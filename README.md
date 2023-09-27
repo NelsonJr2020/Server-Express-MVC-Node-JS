@@ -60,7 +60,70 @@ JWT_SECRET = mi_secreto_secreto_super_secreto
 - Asegurese que posea un usuario con privilegios (de preferencia root) de administrador para la DB y utilice sus credenciales en el archivo **.env**.
 
 *[ Configuración manual inicial de la db ]*
-- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar al menos un usuario desde consola mysql o cualquier editor de mysql.
+- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura con el código SQL y luego debe crear al menos un usuario desde consola mysql o cualquier editor de mysql.
+```SQL
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `guid` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `title` varchar(60) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `img` varchar(150) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `userId` int(4) DEFAULT NULL,
+  `datePost` datetime DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+CREATE TABLE `profiles` (
+  `id` int(11) NOT NULL,
+  `profileId` int(11) DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `firstName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `lastName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `userName` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `email` varchar(80) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `password` varchar(200) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  `role` int(11) DEFAULT NULL,
+  `birthDate` datetime DEFAULT NULL,
+  `gender` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT 'Desconocido',
+  `isActive` tinyint(4) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `profileId` (`profileId`);
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `role` (`role`);
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `profiles_ibfk_2` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `profiles_ibfk_3` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `profiles_ibfk_4` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+COMMIT;
+```
 - Para crear el usuario si o si debe almacenar un email test@example.com, una contraseña encriptada, un nombre y apellido, un rol numérico (1 → administrador, 2 → moderador, 3 → usuario) y el estado isActive = 1.
 - Para generar la contraseña puede correr este código utilizando bcryptjs generando una contraseña provisoria
   ```javascript
@@ -78,7 +141,11 @@ JWT_SECRET = mi_secreto_secreto_super_secreto
     }
   });
   ```
-
+- Entonces desde la consola de mysql o desde una aplicación correr el siguiente código sin olvidar que si o si deber reemplazar el campo password por la contraseña encriptada obtenida en el paso anterior
+```SQL
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `password`, `phone`, `role`, `birthDate`, `gender`, `isActive`, `createdAt`, `updatedAt`) VALUES
+(1, 'Nombre', 'Apellido', 'apododeusuario', 'admin@example.com', 'contraseñaencriptada', 997, 1, '1977-05-03 00:00:00', 'Desconocido', 1, '2023-09-27 01:44:16', '2023-09-27 01:44:16');
+```
 ### PUESTA EN MARCHA
 Una vez realizados los pasos previos,
  1- Debe navegar desde la consola hasta la raiz de donde tiene el proyecto descomprimido 
