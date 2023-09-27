@@ -2,7 +2,7 @@
 
 //REQUIRES
 const { DataTypes } = require('sequelize');
-const db = require('../database/database');
+const db = require('../database/db');
 
 //MODELADO DE POST CON SEQUELIZE
 const Post = db.sequelize.define(
@@ -32,7 +32,7 @@ const Post = db.sequelize.define(
 );
 
 //CHEQUEO DE EXISTENCIA DE LA TABLA POSTS Y POSIBLE CREACIÓN/SINCRONIZACIÓN
-db.syncTable('Posts');
+Post.sync({ alter: true, });
 
 //EXPORTACIÓN DEL MODELO POST
 module.exports = Post;

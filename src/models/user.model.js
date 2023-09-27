@@ -2,7 +2,7 @@
 
 //REQUIRES
 const { DataTypes } = require('sequelize');
-const db = require('../database/database');
+const db = require('../database/db');
 const Role = require('./role.model');
 
 //MODELADO DE USUARIO CON SEQUELIZE
@@ -15,11 +15,17 @@ const User = db.sequelize.define(
         lastName: {
             type: DataTypes.STRING(50),
         },
+        userName: {
+            type: DataTypes.STRING(16),
+        },
         email: {
             type: DataTypes.STRING(80),
         },
         password: {
             type: DataTypes.STRING(200),
+        },
+        phone: {
+            type: DataTypes.INTEGER,
         },
         role: {
             type: DataTypes.INTEGER,
@@ -45,7 +51,7 @@ User.belongsTo(Role, {
 });
 
 //CHEQUEO DE EXISTENCIA DE LA TABLA USUARIOS Y POSIBLE CREACIÓN/SINCRONIZACIÓN
-db.syncTable('Users');
+User.sync({ alter: true, });
 
 //EXPORTACIÓN DEL MODELO USER
 module.exports = User;
