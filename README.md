@@ -2,12 +2,13 @@
 # PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
 
 Este servidor es un prototipo de una webapp para un foro multiusuario aprovechando el basto desarrollo de bibliotecas para node js.
-En la plataforma existen los roles de Administrador, Moderador y Usuario, y está la sección de publicaciones, dónde 
-se puede ver, editar y eliminar las mismas siempre y cuando se posea autorización.
+Cuenta con una plataforma de usuarios con roles de Administrador, Moderador y Usuario; tiene una sección de publicaciones para el foro, en ella se pueden ver,
+editar y eliminar los posteos en función del nivel de autorización. Lo mismo un administrador puede ver, editar y eliminar a un usuario, un moderador puede ver
+y editar a un usuario pero no eliminarlo, un usuario solo puede modificar su perfil.
 El proyecto está desarrollado con el patrón de arquitectura de software MVC (Model - View - Controller) y a su vez está desarrollado 
 con el estilo de programación OOP (Object-Oriented Programming) donde se desarrollan clases y objetos para su posterior uso.
 Para reducir un poco el código se optó por la exportación de las instancias de las clases en su mayoría.
-El proyecto está firmemente arraigado sobre Sequelize y sobre los servicios desarrollados sobre los modelos de sequelize y que sirven a los controladores.
+Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores.
 
 
 ## Instalación
@@ -64,7 +65,7 @@ Para poder utilizar la app debe ingresar a cualquier navegador y escribir:
 http://localhost:3000
 ```
 
-Una vez en la página principal, para el test puede utilizar los siguientes usuarios con privilegio de administrador, moderador y usuario común
+Una vez en la página principal, para el test puede utilizar los siguientes usuarios con privilegios de administrador, moderador y usuario común
 
     ► email = "administrador@example.com"
     ► password = "12345678"
