@@ -91,3 +91,27 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
     
     ► email = "melissa.fleming@example.com"
     ► password = "12345678"
+    
+### ESTRUCTURA DEL PROYECTO
+Directorios y archivos importantes:
+
+![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
+
+- public/: Archivos estáticos como CSS, imágenes y JavaScript.
+- src/: Contiene el código fuente de la aplicación.
+  - configs/: Archivos de configuración inicial y de vistas.
+  - controllers/: Controladores de Express.
+  - database/: Configuracion de la base de datos
+  - middlewares/: Middleware para proteger las rutas con autenticación de sesión y de jwt
+  - models/: Modelos de Sequelize.
+  - routes/: Rutas de Express.
+  - services/: Servicios como user.service, post.service y view.service
+  - utils/: Factory para crear las vistas y sus configuraciones
+  - views/: Plantillas EJS.
+  
+
+
+### LICENCIA
+Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
+Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
+Puedes encontrar el texto completo de la licencia en el archivo [LICENSE](LICENSE).
