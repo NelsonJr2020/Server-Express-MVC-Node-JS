@@ -270,16 +270,19 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
 >      - **base/** *{plantilla base}*
 >      - **partials/** *{parciales de la plantilla}*
 ###### *VER DIRECTORIOS*
-> [![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets) \
-> [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) \
-> [![src/controllers](https://img.shields.io/badge/src-controllers-gold?logo=files&logoColor=fff)](src/controllers) \
-> [![src/database](https://img.shields.io/badge/src-database-khaki?logo=files&logoColor=fff)](src/database) \
-> [![src/middlewares](https://img.shields.io/badge/src-middlewares-slateblue?logo=files&logoColor=fff)](src/middlewares) \
-> [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models) \
-> [![src/routes](https://img.shields.io/badge/src-routes-mediumseagreen?logo=files&logoColor=fff)](src/routes) \
-> [![src/services](https://img.shields.io/badge/src-services-gold?logo=files&logoColor=fff)](src/services) \
-> [![src/utils](https://img.shields.io/badge/src-services-yellowgreen?logo=files&logoColor=fff)](src/utils) \
-> [![src/views](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/views)
+> [![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets)
+> > [![assets/css](https://img.shields.io/badge/assets-css-lightblue?logo=files&logoColor=fff)](assets/css)
+> 
+> [![src](https://img.shields.io/badge/src-555?logo=files&logoColor=fff)](src/)
+> > [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) \
+> > [![src/controllers](https://img.shields.io/badge/src-controllers-gold?logo=files&logoColor=fff)](src/controllers) \
+> > [![src/database](https://img.shields.io/badge/src-database-khaki?logo=files&logoColor=fff)](src/database) \
+> > [![src/middlewares](https://img.shields.io/badge/src-middlewares-slateblue?logo=files&logoColor=fff)](src/middlewares) \
+> > [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models) \
+> > [![src/routes](https://img.shields.io/badge/src-routes-mediumseagreen?logo=files&logoColor=fff)](src/routes) \
+> > [![src/services](https://img.shields.io/badge/src-services-gold?logo=files&logoColor=fff)](src/services) \
+> > [![src/utils](https://img.shields.io/badge/src-services-yellowgreen?logo=files&logoColor=fff)](src/utils) \
+> > [![src/views](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/views)
 ## LICENCIA, USO Y ATRIBUCIONES
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
 Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
