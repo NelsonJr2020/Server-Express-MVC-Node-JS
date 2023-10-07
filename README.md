@@ -246,10 +246,6 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
 ## ESTRUCTURA DEL PROYECTO
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
 ---
-###### *VER DIRECTORIOS*
-> [![public/assets](https://img.shields.io/badge/public-assets-gold?logo=files&logoColor=fff)](public/assets) \
-> [![src](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/)
-
 - ­**public/** *{Archivos estáticos como CSS, imágenes y JavaScript}*
    - **assets/** *{librerías de archivos públicos del front-end}*
       - **bootstrap/** *{librerias bootstrap para las vistas}*
@@ -272,7 +268,11 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
    - **views/** *{plantillas **ejs** con el contenido para el render dinámico}*
       - **base/** *{plantilla base}*
       - **partials/** *{parciales de la plantilla}*
-  
+---
+###### *VER DIRECTORIOS*
+> [![public/assets](https://img.shields.io/badge/public-assets-gold?logo=files&logoColor=fff)](public/assets) \
+> [![src](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/)
+
 ## LICENCIA, USO Y ATRIBUCIONES
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
 Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
