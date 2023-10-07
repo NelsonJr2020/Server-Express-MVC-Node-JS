@@ -112,72 +112,70 @@ Esta configuración está pensada tanto para iniciar la webapp y testearla rápi
 - Es sumamente recomendable que en un entorno de desarrollo utilice un usuario mysql root sin contraseña, de la manera que fue diseñado el proyecto.
 ###### *Configuración manual*
 - En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura de la db con el código SQL proporcionado a continuación.
-<details>
-   <summary>CÓDIGO SQL PARA CREAR LA DB MANUALMENTE</summary> 
-```SQL
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL,
-  `guid` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `title` varchar(60) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `img` varchar(150) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `userId` int(4) DEFAULT NULL,
-  `datePost` datetime DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-CREATE TABLE `profiles` (
-  `id` int(11) NOT NULL,
-  `profileId` int(11) DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `firstName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `lastName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `userName` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `email` varchar(80) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `password` varchar(200) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
-  `phone` int(11) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL,
-  `birthDate` datetime DEFAULT NULL,
-  `gender` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT 'Desconocido',
-  `isActive` tinyint(4) DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `profiles`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `profileId` (`profileId`);
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `role` (`role`);
-ALTER TABLE `profiles`
-  ADD CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `profiles_ibfk_2` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `profiles_ibfk_3` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `profiles_ibfk_4` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-COMMIT;
- ```
-</details>
+  ###### **Código SQL para generar la base de datos manualmente**
+       ```SQL
+       CREATE TABLE `posts` (
+         `id` int(11) NOT NULL,
+         `guid` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+         `title` varchar(60) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `content` text COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `img` varchar(150) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `userId` int(4) DEFAULT NULL,
+         `datePost` datetime DEFAULT NULL,
+         `createdAt` datetime NOT NULL,
+         `updatedAt` datetime NOT NULL
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+       CREATE TABLE `profiles` (
+         `id` int(11) NOT NULL,
+         `profileId` int(11) DEFAULT NULL,
+         `color` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `avatar` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `createdAt` datetime NOT NULL,
+         `updatedAt` datetime NOT NULL
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+       CREATE TABLE `roles` (
+         `id` int(11) NOT NULL,
+         `name` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `createdAt` datetime NOT NULL,
+         `updatedAt` datetime NOT NULL
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+       CREATE TABLE `users` (
+         `id` int(11) NOT NULL,
+         `firstName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `lastName` varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `userName` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `email` varchar(80) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `password` varchar(200) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+         `phone` int(11) DEFAULT NULL,
+         `role` int(11) DEFAULT NULL,
+         `birthDate` datetime DEFAULT NULL,
+         `gender` varchar(16) COLLATE utf8mb4_spanish2_ci DEFAULT 'Desconocido',
+         `isActive` tinyint(4) DEFAULT NULL,
+         `createdAt` datetime NOT NULL,
+         `updatedAt` datetime NOT NULL
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+       ALTER TABLE `posts`
+         ADD PRIMARY KEY (`id`);
+       ALTER TABLE `profiles`
+         ADD PRIMARY KEY (`id`),
+         ADD KEY `profileId` (`profileId`);
+       ALTER TABLE `roles`
+         ADD PRIMARY KEY (`id`);
+       ALTER TABLE `users`
+         ADD PRIMARY KEY (`id`),
+         ADD KEY `role` (`role`);
+       ALTER TABLE `profiles`
+         ADD CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `profiles_ibfk_2` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `profiles_ibfk_3` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `profiles_ibfk_4` FOREIGN KEY (`profileId`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+       ALTER TABLE `users`
+         ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+         ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+       COMMIT;
+        ```
 
 ###### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
 
