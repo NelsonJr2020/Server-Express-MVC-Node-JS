@@ -232,22 +232,31 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
     ► email = "melissa.fleming@example.com"
     ► password = "12345678"
 ***
-## ESTRUCTURA DEL PROYECTO
-Directorios y archivos importantes:
-
+## ESTRUCTURA DEL PROYECTO [files](https://img.shields.io/badge/Archivos-E5E5E9?logo=files&logoColor=eee)
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
-
-- public/: Archivos estáticos como CSS, imágenes y JavaScript.
-- src/: Contiene el código fuente de la aplicación.
-  - configs/: Archivos de configuración inicial y de vistas.
-  - controllers/: Controladores de Express.
-  - database/: Configuracion de la base de datos
-  - middlewares/: Middleware para proteger las rutas con autenticación de sesión y de jwt
-  - models/: Modelos de Sequelize.
-  - routes/: Rutas de Express.
-  - services/: Servicios como user.service, post.service y view.service
-  - utils/: Factory para crear las vistas y sus configuraciones
-  - views/: Plantillas EJS.
+---
+- ­**public/** *{Archivos estáticos como CSS, imágenes y JavaScript}*
+   - **assets/** *{librerías de archivos públicos del front-end}*
+      - **bootstrap/** *{librerias bootstrap para las vistas}*
+      - **css/** *{archivos css públicos necesarios para las vistas}*
+           - ­**base/** *{base principal para el render de css}*
+           - **partials/** *{parciales para el render de css}*
+      - **fontawesome/** *{íconos en fuentes para bootstrap}*
+      - **icons/** *{iconos de la webapp}*
+      - **js/** *{javascripts user-interface creados para la lógica del front-end y herramientas de mensajería}*
+- **src/** *{Contiene todo el código fuente de la lógica principal de la aplicación}*
+   - **configs/** *{archivos de configuración inicial y de vistas}*
+      - **datatest/** *{datos fake para testeo}*
+   - **controllers** *{controladores de Express}*
+   - **database/** *{configuracion de la base de datos}*
+   - **middlewares/** *{middleware para proteger las rutas con autenticación de sesión y de jasonwebtoken}*
+   - **models/** *{modelos de Sequelize}*
+   - **routes/** *{rutas de Express}*
+   - **services/** *{servicios como user.service, post.service y view.service}*
+   - **utils/** *{factory para crear las vistas y sus configuraciones}*
+   - **views/** *{plantillas **ejs** con el contenido para el render dinámico}*
+      - **base/** *{plantilla base}*
+      - **partials/** *{parciales de la plantilla}*
   
 ## LICENCIA, USO Y ATRIBUCIONES
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
