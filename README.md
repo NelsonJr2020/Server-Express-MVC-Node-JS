@@ -9,9 +9,8 @@ Tabla de Contenidos
 --------
 * [Introducción](README.md#introducción)
 * [Descripción](README.md#descripción)
-* [License, use and attributions](README.md#license-use-and-attribution)
-* [Requirements](README.md#requirements)
-* [Installation](README.md#installation)
+* [Requisitos](README.md#requisitos)
+* [Instalación](README.md#instalación)
     * [Standard packages](README.md#standard-packages)
     * [Download sample data](README.md#download-sample-data)
     * [Kinect Installation](README.md#kinect-installation)
@@ -31,7 +30,7 @@ Tabla de Contenidos
     * [PyTorch](README.md#pytorch)
     * [Pynoddy](README.md#pynoddy)
 * [Project Development](README.md#project-development)
-* [Interested in obtaining a fully operational system?](README.md#obtaining-a-full-system)
+* [Licencia, uso y atribuciones](README.md#licencia-uso-y-atribuciones)
 
 ## INTRODUCCIÓN
 Este proyecto fue pensado como un prototipo de una webapp diseñada como un foro para estudiantes, con la posibilidad de interactuar a través de publicaciones, el prototipo puede ser mejorado, agregandole nuevas funcionalidades como la de comentar, la de enviar mensajes. El proyecto es escalable y de fácil mantenimiento.
@@ -259,7 +258,8 @@ Directorios y archivos importantes:
   
 
 
-#### LICENCIA
+#### LICENCIA, USO Y ATRIBUCIONES
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
 Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
 Puedes encontrar el texto completo de la licencia en el archivo [LICENSE](LICENSE).
+Leer acerca de [GPL v3](https://es.wikipedia.org/wiki/GNU_General_Public_License)
