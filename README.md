@@ -10,6 +10,8 @@ con el estilo de programación OOP (Object-Oriented Programming) donde se desarr
 Para reducir un poco el código se optó por la exportación de las instancias de las clases en su mayoría.
 Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores.
 
+![JavaScript](https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=round-square)
+[![License: LGPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 
