@@ -21,7 +21,7 @@ Tabla de Contenidos
             * [Configuración manual](README.md#configuración-manual)
     * [Puesta en marcha](README.md#puesta-en-marcha)
 * [Estructura del proyecto](README.md#estructura-del-proyecto)
-    *[Ver Directorios](README.md#ver-directorios) 
+    * [Ver Directorios](README.md#ver-directorios)
 * [Licencia, uso y atribuciones](README.md#licencia-uso-y-atribuciones)
 
 ## INTRODUCCIÓN
