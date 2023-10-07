@@ -269,12 +269,12 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
 >      - **base/** *{plantilla base}*
 >      - **partials/** *{parciales de la plantilla}*
 ###### *VER DIRECTORIOS*
-> [![public/assets](https://img.shields.io/badge/public-assets-gold?logo=files&logoColor=fff)](public/assets) \
+> [![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets) \
 > [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) \
 > [![src/controllers](https://img.shields.io/badge/src-controllers-gold?logo=files&logoColor=fff)](src/controllers) \
 > [![src/database](https://img.shields.io/badge/src-database-khaki?logo=files&logoColor=fff)](src/database) \
 > [![src/middlewares](https://img.shields.io/badge/src-middlewares-slateblue?logo=files&logoColor=fff)](src/middlewares) \
-> [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models)
+> [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models) \
 > [![src/routes](https://img.shields.io/badge/src-routes-mediumseagreen?logo=files&logoColor=fff)](src/routes) \
 > [![src/services](https://img.shields.io/badge/src-services-gold?logo=files&logoColor=fff)](src/services) \
 > [![src/utils](https://img.shields.io/badge/src-services-yellowgreen?logo=files&logoColor=fff)](src/utils) \
