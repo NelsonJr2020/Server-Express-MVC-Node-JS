@@ -112,7 +112,9 @@ Esta configuración está pensada tanto para iniciar la webapp y testearla rápi
 - Es sumamente recomendable que en un entorno de desarrollo utilice un usuario mysql root sin contraseña, de la manera que fue diseñado el proyecto.
 ###### *Configuración manual*
 - En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura de la db con el código SQL proporcionado a continuación.
-  ###### **Código SQL para generar la base de datos manualmente**
+  <details>
+  <summary>Código SQL para crear la estructura de la base de datos</summary>
+
   ```SQL
   CREATE TABLE `posts` (
     `id` int(11) NOT NULL,
@@ -176,6 +178,7 @@ Esta configuración está pensada tanto para iniciar la webapp y testearla rápi
     ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
   COMMIT;
    ```
+</details>
 
 ###### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
 
