@@ -39,7 +39,7 @@ Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son 
 ![MisProyectos](https://badgen.net/badge/NelsonJr2020/GitHubProjects/) 
 ![ArgentinaPrograma](https://badgen.net/badge/ArgentinaPrograma/4.0/) 
 ![Compatible](https://img.shields.io/badge/windows_7-compatible-orange?logo=windows.svg)
-![Mantenido](https://img.shields.io/badge/Maintenido%3F-si-green.svg) 
+![Mantenido](https://img.shields.io/badge/Mantenido%3F-si-green.svg) 
 
 ## REQUISITOS
 Es fundamental contar con un sistema operativo compatible con node.js
