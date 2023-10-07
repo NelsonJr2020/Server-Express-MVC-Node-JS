@@ -271,7 +271,9 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
 >      - **partials/** *{parciales de la plantilla}*
 ###### *VER DIRECTORIOS*
 > [![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets)
-> > [![assets/css](https://img.shields.io/badge/assets-css-dodgerblue?logo=files&logoColor=fff)](assets/css)
+> > [![assets/css](https://img.shields.io/badge/assets-css-dodgerblue?logo=files&logoColor=fff)](assets/css) \
+> > [![assets/icons](https://img.shields.io/badge/assets-icons-turquoise?logo=files&logoColor=fff)](assets/icons) \
+> > [![assets/js](https://img.shields.io/badge/assets-js-gold?logo=files&logoColor=fff)](assets/js)
 > 
 > [![src](https://img.shields.io/badge/src-555?logo=files&logoColor=fff)](src/)
 > > [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) \
