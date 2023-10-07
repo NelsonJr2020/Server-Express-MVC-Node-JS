@@ -175,9 +175,11 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
-```
+ ```
 </details>
-#### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
+
+###### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
+
 - Crear el usuario de prueba (
   - Email: test@example.com
   - Contraseña encriptada (generada por bcryptjs)
