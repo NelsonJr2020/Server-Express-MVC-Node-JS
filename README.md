@@ -1,29 +1,70 @@
  
 # PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
-![MisProyectos](https://badgen.net/badge/NelsonJr2020/GitHubProjects/) 
-![ArgentinaPrograma](https://badgen.net/badge/ArgentinaPrograma/4.0/) 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000)
+![JavaScript](https://img.shields.io/badge/JavaScript-code-ivory?logo=JavaScript&logoColor=gold)
+![CSS](https://img.shields.io/badge/css-code-ivory?logo=CSS3&logoColor=blue)
+![EJS](https://img.shields.io/badge/ejs-code-ivory?logo=HTML5&logoColor=orangered)
 [![License: LGPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![VisualStudioCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com)
-![Compatible](https://img.shields.io/badge/windows_7-compatible-orange?logo=windows)
-![Mantenido](https://img.shields.io/badge/Maintenido%3F-si-green.svg) \
-Este servidor es un prototipo de una webapp para un foro multiusuario aprovechando el basto desarrollo de bibliotecas para node js.
-Cuenta con una plataforma de usuarios con roles de Administrador, Moderador y Usuario; tiene una sección de publicaciones para el foro, en ella se pueden ver,
+
+Tabla de Contenidos
+--------
+* [Introducción](README.md#introducción)
+* [Descripción](README.md#descripción)
+* [License, use and attributions](README.md#license-use-and-attribution)
+* [Requirements](README.md#requirements)
+* [Installation](README.md#installation)
+    * [Standard packages](README.md#standard-packages)
+    * [Download sample data](README.md#download-sample-data)
+    * [Kinect Installation](README.md#kinect-installation)
+        * [Windows](README.md#for-windows)
+            * [KinectV2 - PyKinect2](README.md#kinect-v2---pykinect2)
+        * [Linux](README.md#for-linux)
+            * [KinectV1 - libkinect](README.md#kinect-v1---libfreenect)
+            * [KinectV2 - freenect2](README.md#kinect-v2---freenect2)
+   * [LiDAR L515 Installation](README.md#lidar-l515-installation)
+      * [Installing in Windows](README.md#installing-in-windows)
+      * [Installing in Linux](README.md#installing-in-linux)
+      * [Running with Python](README.md#running-with-python)
+* [External packages](README.md#external-packages)
+    * [Gempy](README.md#gempy)
+    * [Devito](README.md#devito)
+    * [PyGimli](README.md#pygimli)
+    * [PyTorch](README.md#pytorch)
+    * [Pynoddy](README.md#pynoddy)
+* [Project Development](README.md#project-development)
+* [Interested in obtaining a fully operational system?](README.md#obtaining-a-full-system)
+
+## INTRODUCCIÓN
+Este proyecto fue pensado como un prototipo de una webapp diseñada como un foro para estudiantes, con la posibilidad de interactuar a través de publicaciones, el prototipo puede ser mejorado, agregandole nuevas funcionalidades como la de comentar, la de enviar mensajes. El proyecto es escalable y de fácil mantenimiento.
+
+## DESCRIPCIÓN
+
+El foro cuenta con una plataforma de usuarios con roles de Administrador, Moderador y Usuario; tiene una sección de publicaciones para el foro, en ella se pueden ver,
 editar y eliminar los posteos en función del nivel de autorización. Lo mismo un administrador puede ver, editar y eliminar a un usuario, un moderador puede ver
 y editar a un usuario pero no eliminarlo, un usuario solo puede modificar su perfil.
 El proyecto está desarrollado con el patrón de arquitectura de software MVC (Model - View - Controller) y a su vez está desarrollado 
 con el estilo de programación OOP (Object-Oriented Programming) donde se desarrollan clases y objetos para su posterior uso.
 Para reducir un poco el código se optó por la exportación de las instancias de las clases en su mayoría.
-Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores.
-
+Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores. 
+\
+\
+![MisProyectos](https://badgen.net/badge/NelsonJr2020/GitHubProjects/) 
+![ArgentinaPrograma](https://badgen.net/badge/ArgentinaPrograma/4.0/) 
+![Compatible](https://img.shields.io/badge/windows_7-compatible-orange?logo=windows.svg)
+![Mantenido](https://img.shields.io/badge/Maintenido%3F-si-green.svg) 
 
 
 ## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 
-### NODE JS | PACKAGES 
+### IDE | NODE JS & PACKAGES 
 
-Para el proyecto se necesita tener instalado node-js en la versión mínima indicada, así como las siguientes dependencias indicadas en [package.json](package.json)
-
+#### REQUISITOS
+- **IDE** para el desarrollo del proyecto. Se recomienda utilizar el IDE Visual Studio Code en su versión mínima 1.70.3
+\
+\
+[![VSCode](https://img.shields.io/badge/Visual%20Studio%20Code_─_1.70.3-0078D7.svg?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com)
+- **Entorno de ejecución** para correr el proyecto. Se requiere instalar node-js en la versión mínima indicada, así como las dependencias indicadas en [package.json](package.json) 
+\
+\
 [![NodeJs](https://img.shields.io/badge/Node.js_─_12.18.4-43853D?logo=node.js&logoColor=white)](https://nodejs.org/es)
 
    ✔ [![express](https://img.shields.io/badge/express-js_─_4.18.2-E5E5E9?logo=express&logoColor=eee)](https://expressjs.com/es/starter/installing.html) \
@@ -42,8 +83,9 @@ Para el proyecto se necesita tener instalado node-js en la versión mínima indi
 Para el entorno de desarrollo se utiliza el [nodemon](https://www.npmjs.com/package/nodemon) y [morgan](https://github.com/expressjs/morgan)
     
 Una vez instaladas las dependencias debe ingresar a la consola de comandos y desde allí dirigirse al directorio donde se encuentra descomprimido el proyecto.
+
 ***
-### BASE DE DATOS
+#### BASE DE DATOS
 Configuración de la Base de Datos
 
 - Asegúrate de tener un motor de MySQL instalado en tu sistema (se recomienda las herramientas gratuitas de XAMPP, MYSQL Worbench, etc).
@@ -165,7 +207,7 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `userName`, `email`, `passwo
 ```
 - Por último no debe olvidarse que para hacer el login al sistema deberá utilizar la contraseña en "texto plano", ya que la encriptada solo funciona del lado servidor.
 ***
-### PUESTA EN MARCHA
+#### PUESTA EN MARCHA
 Una vez realizados los pasos previos,\
   1 - Debe navegar en la consola bash y ubicarse en la raiz del proyecto\
   2 - Una vez ubicado en el directorio del proyecto, debe ejecutar el siguiente comando:
@@ -198,7 +240,7 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
     ► email = "melissa.fleming@example.com"
     ► password = "12345678"
 ***
-### ESTRUCTURA DEL PROYECTO
+#### ESTRUCTURA DEL PROYECTO
 Directorios y archivos importantes:
 
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
@@ -217,7 +259,7 @@ Directorios y archivos importantes:
   
 
 
-### LICENCIA
+#### LICENCIA
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
 Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
 Puedes encontrar el texto completo de la licencia en el archivo [LICENSE](LICENSE).
