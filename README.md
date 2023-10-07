@@ -1,5 +1,6 @@
  
-# PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
+# PROTOTIPO DE UN FORO 
+# SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
 ![JavaScript](https://img.shields.io/badge/JavaScript-code-ivory?logo=JavaScript&logoColor=F1E05A)
 ![CSS](https://img.shields.io/badge/css-code-ivory?logo=CSS3&logoColor=563D7C)
 ![EJS](https://img.shields.io/badge/ejs-code-ivory?logo=HTML5&logoColor=A91E50)
