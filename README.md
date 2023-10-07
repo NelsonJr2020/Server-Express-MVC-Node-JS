@@ -180,13 +180,13 @@ Esta configuración está pensada tanto para iniciar la webapp y testearla rápi
    ```
 </details>
 
-###### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
+###### :warning: NO OPCIONAL - CRÍTICO PARA LA PUESTA EN MARCHA
 
-- Crear el usuario de prueba (
+- Crear un usuario de prueba
   - Email: test@example.com
   - Contraseña encriptada (generada por bcryptjs)
   - Nombre (firstName) y Apellido (lastName)
-  - Rol (numérico) (1 → administrador | 2 → moderador | 3 → usuario) 
+  - Rol (numérico) (1 → administrador) 
   - Estado isActive = 1
 - Generar una contraseña encriptada y provisoria manualmente puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) de esa manera podrá acceder al sistema.
   ```javascript
@@ -218,9 +218,8 @@ Una vez realizados los pasos previos,\
 ```bash
 $ npm run dev
 ```
-*... con esto daría inicio a la app por primera vez ...*
+*... con esto daría inicio a la app por primera vez ...* **☺**
 
-**☺**
 Si todo salió bien y no tiene errores en pantalla y ha utilizado la opción automatizada para el test podrá utilizar los siguientes usuarios.
 Para poder utilizar la app debe ingresar a cualquier navegador y escribir:
 ```
@@ -244,9 +243,13 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
     ► email = "melissa.fleming@example.com"
     ► password = "12345678"
 ***
-## ESTRUCTURA DEL PROYECTO [files](https://img.shields.io/badge/Archivos-E5E5E9?logo=files&logoColor=eee)
+## ESTRUCTURA DEL PROYECTO
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
 ---
+###### *VER DIRECTORIOS*
+> [![public/assets](https://img.shields.io/badge/public-assets-gold?logo=files&logoColor=fff)](public/assets) \
+> [![src](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/)
+
 - ­**public/** *{Archivos estáticos como CSS, imágenes y JavaScript}*
    - **assets/** *{librerías de archivos públicos del front-end}*
       - **bootstrap/** *{librerias bootstrap para las vistas}*
