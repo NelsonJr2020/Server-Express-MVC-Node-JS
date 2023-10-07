@@ -67,16 +67,20 @@ Es fundamental contar con un sistema operativo compatible con node.js
    ✔ [![bcryptjs](https://img.shields.io/badge/npm-bcryptjs_─_2.4.3-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/bcryptjs) \
    ✔ [![uuid](https://img.shields.io/badge/npm-uuid_─_9.0.1-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/uuid)
 
-Para el entorno de desarrollo se utiliza el [nodemon](https://www.npmjs.com/package/nodemon) y [morgan](https://github.com/expressjs/morgan)
+ - **Entorno de desarrollo** para crear el proyecto. Se utilizaron las dependencias npm nodemon y morgan
+   \
+   \
+   ✔ [![nodemon](https://img.shields.io/badge/npm-nodemon_─_3.0.1-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/nodemon) \
+   ✔ [![morgan](https://img.shields.io/badge/npm-morgan_─_1.10.0-E5E5E9?logo=npm&logoColor=white)](https://github.com/expressjs/morgan)
     
 Una vez instaladas las dependencias debe ingresar a la consola de comandos y desde allí dirigirse al directorio donde se encuentra descomprimido el proyecto.
 
 ***
 ## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 ### INSTALACIÓN
-Para la instalación debe tener presente las versiones del IDE, del entrono, y su compatibilidad con el sistema operativo.
+Para la instalación se debe tener en cuenta las versiones del IDE, del entorno de ejecución, desarrollo y dependencias, como la compatibilidad de todas ellas con el sistema operativo.
 ### CONFIGURACIÓN
-La configuración principal se encuentra en el archivo .env, allí deberá escoger un puerto (3000 por defecto) para el server, los datos de usuario de la base de datos, en este caso se utilizó MySQL como dialecto de base de datos. Para el entorno de producción las claves SECRET, API_KEY y JWT_SECRET son fundamentales para la seguridad, por lo tanto, es muy recomendable generarlas en un entorno local aislado, no almacenarlas en lugares públicos y mantener copias privadas y encriptadas de las mismas.  
+La configuración principal se encuentra en el archivo .env, allí deberá escoger un puerto PORT (3000 defecto) para el server. Ya que se utilizó MySQL para la base de datos, el DIALECT es mysql. En un entorno de producción las claves SECRET, API_KEY y JWT_SECRET son fundamentales para la seguridad, por lo tanto, es muy recomendable generarlas en un entorno local, privado y aislado, no almacenarlas en lugares públicos y mantener copias encriptadas, privadas y seguras de las mismas.  
 - Configuración por defecto del archivo .env
 ```dotenv
 PORT = 3000
@@ -106,7 +110,9 @@ Esta configuración está pensada tanto para iniciar la webapp y testearla rápi
 - Asegurese que posea un usuario con privilegios (de preferencia root) de administrador para la DB y utilice sus credenciales en el archivo **.env**.
 - Es sumamente recomendable que en un entorno de desarrollo utilice un usuario mysql root sin contraseña, de la manera que fue diseñado el proyecto.
 ###### *Configuración manual*
-- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura de la db con el código SQL proporcionado y luego debe crear al menos un usuario desde consola mysql o cualquier editor de mysql preferido.
+- En el caso de arrancar con el sistema en blanco y no querer utilizar la automatización, debe generar primeramente la estructura de la db con el código SQL proporcionado a continuación.
+<details>
+   <summary>CÓDIGO SQL PARA CREAR LA DB MANUALMENTE</summary> 
 ```SQL
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
@@ -170,13 +176,15 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`role`) REFERENCES `roles` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 ```
-- Para crear el usuario si o si debe generar
-   - Email: test@example.com
-   - Contraseña encriptada (generada por bcryptjs)
-   - Nombre (firstName) y Apellido (lastName)
-   - Rol (numérico) (1 → administrador | 2 → moderador | 3 → usuario) 
-   - Estado isActive = 1
-- Para generar una contraseña encriptada y provisoria manualmente puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) de esa manera podrá acceder al sistema.
+</details>
+#### NO OPCIONAL Y CRÍTICO PARA LA PUESTA EN MARCHA
+- Crear el usuario de prueba (
+  - Email: test@example.com
+  - Contraseña encriptada (generada por bcryptjs)
+  - Nombre (firstName) y Apellido (lastName)
+  - Rol (numérico) (1 → administrador | 2 → moderador | 3 → usuario) 
+  - Estado isActive = 1
+- Generar una contraseña encriptada y provisoria manualmente puede correr este código que utiliza bcryptjs (ya instalado en los pasos anteriores) de esa manera podrá acceder al sistema.
   ```javascript
   const bcrypt = require('bcrypt');
 
