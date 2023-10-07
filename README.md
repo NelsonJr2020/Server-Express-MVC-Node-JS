@@ -1,6 +1,12 @@
  
 # PROTOTIPO DE UN FORO | SERVIDOR MVC SOBRE NODE.JS CON EXPRESS, SEQUELIZE, HELMET, DOTENV, EXPRESS-SESSION Y EJS
-
+![MisProyectos](https://badgen.net/badge/NelsonJr2020/GitHubProjects/) 
+![ArgentinaPrograma](https://badgen.net/badge/ArgentinaPrograma/4.0/) 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000)
+[![License: LGPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![VisualStudioCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com)
+![Compatible](https://img.shields.io/badge/windows_7-compatible-orange?logo=windows)
+![Mantenido](https://img.shields.io/badge/Maintenido%3F-si-green.svg) \
 Este servidor es un prototipo de una webapp para un foro multiusuario aprovechando el basto desarrollo de bibliotecas para node js.
 Cuenta con una plataforma de usuarios con roles de Administrador, Moderador y Usuario; tiene una sección de publicaciones para el foro, en ella se pueden ver,
 editar y eliminar los posteos en función del nivel de autorización. Lo mismo un administrador puede ver, editar y eliminar a un usuario, un moderador puede ver
@@ -10,25 +16,28 @@ con el estilo de programación OOP (Object-Oriented Programming) donde se desarr
 Para reducir un poco el código se optó por la exportación de las instancias de las clases en su mayoría.
 Este proyecto se basa en la potencia de Express Sequelize y Ejs y su fuerte son los servicios desarrollados para servir a los controladores.
 
-![JavaScript](https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=round-square)
-[![License: LGPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
 ## INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN MARCHA
 
-### NODE JS | DEPENDENCIAS
-Para el proyecto se necesita tener node-js instalado, así como las siguientes dependencias cada una con la versión indicada en el archivo [package.json](package.json)
+### NODE JS | PACKAGES 
 
-    ✔ [express](https://expressjs.com/es/starter/installing.html)\
-    ✔ [sequelize](https://sequelize.org)\
-    ✔ [helmet](https://helmetjs.github.io)\
-    ✔ [express-session](https://github.com/expressjs/session)\
-    ✔ [ejs](https://ejs.co)\
-    ✔ [body-parser](https://www.npmjs.com/package/body-parser)\
-    ✔ [cookie-parser](https://www.npmjs.com/package/cookie-parser)\
-    ✔ [dotenv](https://www.npmjs.com/package/dotenv)\
-    ✔ [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)\
-    ✔ [bcryptjs](https://www.npmjs.com/package/bcryptjs)\
-    ✔ [uuid](https://www.npmjs.com/package/uuid)\
+Para el proyecto se necesita tener instalado node-js en la versión mínima indicada, así como las siguientes dependencias indicadas en [package.json](package.json)
+
+[![NodeJs](https://img.shields.io/badge/Node.js_─_12.18.4-43853D?logo=node.js&logoColor=white)](https://nodejs.org/es)
+
+   ✔ [![express](https://img.shields.io/badge/express-js_─_4.18.2-E5E5E9?logo=express&logoColor=eee)](https://expressjs.com/es/starter/installing.html) \
+   ✔ [![express-session](https://img.shields.io/badge/express-session_─_1.17.3-E5E5E9?logo=express&logoColor=eee)](https://expressjs.com/es/starter/installing.html) \
+   ✔ [![sequelize](https://img.shields.io/badge/sequelize-orm_─_6.32.1-E5E5E9?logo=sequelize&logoColor=white)](https://sequelize.org) \
+   ✔ [![mysql2](https://img.shields.io/badge/npm-mysql2_─_2.3.3-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/mysql2) \
+   ✔ [![jsonwebtoken](https://img.shields.io/badge/npm-jasonwebtoken_─_9.0.2-E5E5E9?logo=npm&logoColor=white)](https://github.com/auth0/node-jsonwebtoken) \
+   ✔ [![helmet](https://img.shields.io/badge/npm-helmet_─_7.0.0-E5E5E9?logo=npm&logoColor=white)](https://helmetjs.github.io) \
+   ✔ [![ejs](https://img.shields.io/badge/npm-ejs_─_3.1.9-E5E5E9?logo=npm&logoColor=white)](https://ejs.co) \
+   ✔ [![body-parser](https://img.shields.io/badge/npm-body_parser_─_1.20.2-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/body-parser) \
+   ✔ [![cookie-parser](https://img.shields.io/badge/npm-cookie_parser_─_1.4.6-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/cookie-parser) \
+   ✔ [![dotenv](https://img.shields.io/badge/npm-dotenv_─_16.3.1-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/dotenv) \
+   ✔ [![bcryptjs](https://img.shields.io/badge/npm-bcryptjs_─_2.4.3-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/bcryptjs) \
+   ✔ [![uuid](https://img.shields.io/badge/npm-uuid_─_9.0.1-E5E5E9?logo=npm&logoColor=white)](https://www.npmjs.com/package/uuid)
 
 Para el entorno de desarrollo se utiliza el [nodemon](https://www.npmjs.com/package/nodemon) y [morgan](https://github.com/expressjs/morgan)
     
@@ -36,7 +45,7 @@ Una vez instaladas las dependencias debe ingresar a la consola de comandos y des
 ***
 ### BASE DE DATOS
 Configuración de la Base de Datos
-✔ [mysql2](https://www.npmjs.com/package/mysql2)
+
 - Asegúrate de tener un motor de MySQL instalado en tu sistema (se recomienda las herramientas gratuitas de XAMPP, MYSQL Worbench, etc).
 - Crea una base de datos en MySQL con el nombre que especificaste en tu archivo .env (por defecto, "server-express").
 - Configuración recomendada para el archivo .env
