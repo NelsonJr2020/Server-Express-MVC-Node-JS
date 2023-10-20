@@ -247,44 +247,25 @@ Una vez en la página principal, para el test puede utilizar los siguientes usua
 ## ESTRUCTURA DEL PROYECTO
 ![image](https://github.com/NelsonJr2020/Server-Express-MVC-Node-JS/assets/62829278/297d0314-685d-4976-8973-c50f6b5cd614)
 ---
->- ­**public/** *{Archivos estáticos como CSS, imágenes y JavaScript}*
->   - **assets/** *{librerías de archivos públicos del front-end}*
->      - **bootstrap/** *{librerias bootstrap para las vistas}*
->      - **css/** *{archivos css públicos necesarios para las vistas}*
->           - ­**base/** *{base principal para el render de css}*
->           - **partials/** *{parciales para el render de css}*
->      - **fontawesome/** *{íconos en fuentes para bootstrap}*
->      - **icons/** *{iconos de la webapp}*
->      - **js/** *{javascripts user-interface creados para la lógica del front-end y herramientas de mensajería}*
->- **src/** *{Contiene todo el código fuente de la lógica principal de la aplicación}*
->   - **configs/** *{archivos de configuración inicial y de vistas}*
->      - **datatest/** *{datos fake para testeo}*
->   - **controllers** *{controladores de Express}*
->   - **database/** *{configuracion de la base de datos}*
->   - **middlewares/** *{middleware para proteger las rutas con autenticación de sesión y de jasonwebtoken}*
->   - **models/** *{modelos de Sequelize}*
->   - **routes/** *{rutas de Express}*
->   - **services/** *{servicios como user.service, post.service y view.service}*
->   - **utils/** *{factory para crear las vistas y sus configuraciones}*
->   - **views/** *{plantillas **ejs** con el contenido para el render dinámico}*
->      - **base/** *{plantilla base}*
->      - **partials/** *{parciales de la plantilla}*
+
 ###### *VER DIRECTORIOS*
-> [![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets)
-> > [![assets/css](https://img.shields.io/badge/assets-css-dodgerblue?logo=files&logoColor=fff)](assets/css) \
-> > [![assets/icons](https://img.shields.io/badge/assets-icons-turquoise?logo=files&logoColor=fff)](assets/icons) \
-> > [![assets/js](https://img.shields.io/badge/assets-js-gold?logo=files&logoColor=fff)](assets/js)
-> 
-> [![src](https://img.shields.io/badge/src-555?logo=files&logoColor=fff)](src/)
-> > [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) \
-> > [![src/controllers](https://img.shields.io/badge/src-controllers-gold?logo=files&logoColor=fff)](src/controllers) \
-> > [![src/database](https://img.shields.io/badge/src-database-khaki?logo=files&logoColor=fff)](src/database) \
-> > [![src/middlewares](https://img.shields.io/badge/src-middlewares-slateblue?logo=files&logoColor=fff)](src/middlewares) \
-> > [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models) \
-> > [![src/routes](https://img.shields.io/badge/src-routes-mediumseagreen?logo=files&logoColor=fff)](src/routes) \
-> > [![src/services](https://img.shields.io/badge/src-services-gold?logo=files&logoColor=fff)](src/services) \
-> > [![src/utils](https://img.shields.io/badge/src-services-yellowgreen?logo=files&logoColor=fff)](src/utils) \
-> > [![src/views](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/views)
+**Puede clickear sobre el directorio para acceder a su contenido** \
+\
+[![public/assets](https://img.shields.io/badge/public-assets-yellow?logo=files&logoColor=fff)](public/assets) *[Archivos estáticos como CSS, imágenes y JavaScript]* \
+|____ [![assets/css](https://img.shields.io/badge/assets-css-dodgerblue?logo=files&logoColor=fff)](assets/css) *[librerías de archivos públicos del front-end]* \
+|________ [![assets/icons](https://img.shields.io/badge/assets-icons-turquoise?logo=files&logoColor=fff)](assets/icons) *[iconos de la webapp]* \
+|________ [![assets/js](https://img.shields.io/badge/assets-js-gold?logo=files&logoColor=fff)](assets/js) *[javascripts user-interface creados para la lógica del front-end y herramientas de mensajería]*
+
+[![src](https://img.shields.io/badge/src-555?logo=files&logoColor=fff)](src/) *[Contiene todo el código fuente de la lógica principal de la aplicación]* \
+|____ [![src/configs](https://img.shields.io/badge/src-configs-powderblue?logo=files&logoColor=fff)](src/configs) *[archivos de configuración inicial y de vistas]* \
+|____ [![src/controllers](https://img.shields.io/badge/src-controllers-gold?logo=files&logoColor=fff)](src/controllers) *[controladores de Express]* \
+|____ [![src/database](https://img.shields.io/badge/src-database-khaki?logo=files&logoColor=fff)](src/database) *[configuracion de la base de datos]* \
+|____ [![src/middlewares](https://img.shields.io/badge/src-middlewares-slateblue?logo=files&logoColor=fff)](src/middlewares) *[middleware para proteger las rutas con autenticación de sesión y de jasonwebtoken]* \
+|____ [![src/models](https://img.shields.io/badge/src-models-tomato?logo=files&logoColor=fff)](src/models) *[modelos de Sequelize]* \
+|____ [![src/routes](https://img.shields.io/badge/src-routes-mediumseagreen?logo=files&logoColor=fff)](src/routes) *[rutas de Express]* \
+|____ [![src/services](https://img.shields.io/badge/src-services-gold?logo=files&logoColor=fff)](src/services) *[servicios como user.service, post.service y view.service]* \
+|____ [![src/utils](https://img.shields.io/badge/src-services-yellowgreen?logo=files&logoColor=fff)](src/utils) *[factory para crear las vistas y sus configuraciones]* \
+|____ [![src/views](https://img.shields.io/badge/src-views-orange?logo=files&logoColor=fff)](src/views) *[plantillas **ejs** con el contenido para el render dinámico]*
 ## LICENCIA, USO Y ATRIBUCIONES
 Este proyecto se encuentra bajo la [Licencia GPL v3](LICENSE).
 Por favor, asegúrate de revisar los términos de la licencia antes de utilizar este software en tu proyecto. 
